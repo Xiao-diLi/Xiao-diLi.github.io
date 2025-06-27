@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "李逍迪的个人主页"
+title: "About me"
 author_profile: true
 redirect_from: 
   - /about/
