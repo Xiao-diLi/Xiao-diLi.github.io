@@ -23,22 +23,22 @@ repository               : "Xiao-diLi/Xiao-diLi.github.io"
 author:
   # Biographic information
   avatar           : "desert_xiaodi.png"
-  name             : "Li Xiaodi"
+  name             : "Li Xiaodi（李逍迪）"
   pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Shanghai"
+  bio              : "每天学习一点点，每天变强一点点"
+  location         : "Shanghai/China"
   employer         : "Fudan University"
   uri              : https://xiao-dili.github.io # URL
-  email            : "我名字拼音atfudan.edu.cn" 
+  email            : # "我名字拼音atfudan.edu.cn" 
 
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : https://scholar.google.com/citations?user=h80jD5gAAAAJ&hl=en
   impactstory      : # URL
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/my-orcid?orcid=0000-0001-9208-7673"
   semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : # URL
   researchgate     : # URL
   scopus           : # URL
 
@@ -46,12 +46,12 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "https://github.com/Xiao-diLi"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
