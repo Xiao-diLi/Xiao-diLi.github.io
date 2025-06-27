@@ -25,8 +25,8 @@ author:
   avatar           : "desert_xiaodi.png"
   name             : "Li Xiaodi（李逍迪）"
   pronouns         : # example: "she/her"  
-  bio              : "每天学习一点点，每天变强一点点"
-  location         : "Shanghai/China"
+  bio              : "Good Good Study, Day Day up!"
+  location         : "Shanghai China"
   employer         : "Fudan University"
   uri              : https://xiao-dili.github.io # URL
   email            : # "我名字拼音atfudan.edu.cn" 
@@ -36,7 +36,7 @@ author:
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : https://scholar.google.com/citations?user=h80jD5gAAAAJ&hl=en
   impactstory      : # URL
-  orcid            : "https://orcid.org/my-orcid?orcid=0000-0001-9208-7673"
+  orcid            : # "https://orcid.org/my-orcid?orcid=0000-0001-9208-7673"
   semantic         : # URL
   pubmed           : # URL
   researchgate     : # URL
@@ -46,7 +46,7 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "https://github.com/Xiao-diLi"
+  github           : "Xiao-diLi"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
