@@ -9,56 +9,44 @@ redirect_from:
 
 {% include base_path %}
 
+<div class="lang-en" markdown="1">
+
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* **Ph.D.** in Physics, Zhejiang University, 2016-2021
+* **B.S.** in Physics, Shandong University, 2012-2016
 
-Work experience
+Work Experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* 2021 - Present: **Postdoctoral Researcher**
+  * Fudan University, Shanghai, China
+  * Research in quantum computation and quantum information theory
 
 Publications
 ======
   <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Talks
+
+</div>
+
+<div class="lang-zh" markdown="1">
+
+教育经历
 ======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
+* **博士**，物理系，浙江大学，2016-2021
+* **学士**，物理学院，山东大学，2012-2016
+
+工作经历
 ======
-  <ul>{% for post in site.teaching reversed %}
+* 2021 至今：**博士后研究员**
+  * 复旦大学，上海
+  * 研究方向：量子计算与量子信息理论
+
+论文发表
+======
+  <ul>{% for post in site.publications reversed %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+
+</div>

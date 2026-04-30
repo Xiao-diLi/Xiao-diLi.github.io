@@ -19,3 +19,20 @@
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
 
 <meta http-equiv="cleartype" content="on">
+
+<style>
+  /* Bilingual logic */
+  body.lang-zh .lang-en { display: none !important; }
+  body:not(.lang-zh) .lang-zh { display: none !important; }
+</style>
+<script>
+  function toggleLanguage() {
+    var isZh = document.body.classList.toggle('lang-zh');
+    localStorage.setItem('lang', isZh ? 'zh' : 'en');
+  }
+  document.addEventListener("DOMContentLoaded", function() {
+    if (localStorage.getItem('lang') === 'zh') {
+      document.body.classList.add('lang-zh');
+    }
+  });
+</script>
