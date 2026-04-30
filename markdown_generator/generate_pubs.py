@@ -13,17 +13,17 @@ pubs = [
     {
         "title": "A new recursion relation for tree-level NLSM amplitudes based on hidden zeros",
         "authors": "X Li, K Zhou",
-        "venue": "arXiv preprint arXiv:2508.12894",
-        "year": "2025",
-        "url": "https://arxiv.org/abs/2508.12894",
+        "venue": "Journal of High Energy Physics",
+        "year": "2026",
+        "url": "https://doi.org/10.1007/JHEP01(2026)010",
         "excerpt": "We derive a new recursion relation for tree-level nonlinear sigma model (NLSM) amplitudes by exploiting the hidden zero structure of scattering amplitudes."
     },
     {
         "title": "Certifying entanglement dimensionality by reduction moments",
         "authors": "C Yi, X Li, H Zhu",
-        "venue": "arXiv preprint arXiv:2501.15360",
-        "year": "2025",
-        "url": "https://arxiv.org/abs/2501.15360",
+        "venue": "PRX Quantum",
+        "year": "2026",
+        "url": "https://doi.org/10.1103/cc1n-gmj1",
         "excerpt": "We develop a practical method for certifying the dimensionality of quantum entanglement using reduction moments, providing efficient lower bounds on the Schmidt number."
     },
     {

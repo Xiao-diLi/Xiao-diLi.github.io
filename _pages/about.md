@@ -13,7 +13,7 @@ I am a researcher at **iFLYTEK Research**, working on **quantum computation**, *
 
 During my Ph.D. at Zhejiang University (2016–2021), I focused on theoretical high-energy physics, particularly on **scattering amplitudes** and **Feynman integral reduction**, developing new algebraic and differential-operator methods for computing one-loop integrals and expanding Einstein-Yang-Mills amplitudes. After graduating, I continued this line of research as a postdoctoral fellow at the University of Science and Technology of China (USTC).
 
-In 2022, I joined [Turing Quantum](https://www.turingq.com/) (Shanghai) as a quantum algorithm engineer, where I gained hands-on experience bridging quantum theory with practical algorithm development. From 2023 to 2025, I was a postdoctoral researcher at Fudan University, where my work shifted toward **quantum information theory** — including quantum state verification via classical shadows, entanglement certification, quantum information masking, and algorithms for neutral-atom array assembly. I am now at iFLYTEK Research, exploring the intersection of quantum computing and artificial intelligence.
+In 2022, I joined [Turing Quantum](https://www.turingq.com/) (Shanghai) as a quantum algorithm engineer, where I gained hands-on experience bridging quantum theory with practical algorithm development. From 2023 to 2025, I was a postdoctoral researcher at Fudan University, where my work shifted toward **quantum information theory** — including quantum state verification via classical shadows, entanglement certification, and quantum information masking. I am now at **iFLYTEK Research**, exploring the intersection of quantum computing and artificial intelligence, and developing efficient algorithms for **neutral-atom array assembly**.
 
 ## Research Interests
 
@@ -44,7 +44,7 @@ Feel free to reach out if you are interested in collaboration or have any questi
 
 博士期间（2016–2021，浙江大学），我的研究方向为理论高能物理，主要聚焦于**散射振幅**和 **Feynman 积分约化**，发展了基于微分算子和代数方法的单圈积分计算新方法，并研究了 Einstein-Yang-Mills 振幅的展开问题。毕业后，我在中国科学技术大学继续从事散射振幅方面的博士后研究工作。
 
-2022 年，我加入[上海图灵量子](https://www.turingq.com/)担任量子算法工程师，积累了将量子理论与实际算法开发相结合的工程经验。2023 至 2025 年，我在复旦大学从事博士后研究工作，研究方向转向**量子信息理论**，包括基于经典影子（classical shadow）的量子态验证、纠缠维度认证、量子信息掩蔽，以及中性原子阵列的快速组装算法等问题。现阶段，我在科大讯飞研究院探索量子计算与人工智能的交叉领域。
+2022 年，我加入[上海图灵量子](https://www.turingq.com/)担任量子算法工程师，积累了将量子理论与实际算法开发相结合的工程经验。2023 至 2025 年，我在复旦大学从事博士后研究工作，研究方向转向**量子信息理论**，包括基于经典影子（classical shadow）的量子态验证、纠缠维度认证以及量子信息掩蔽。目前，我就职于**科大讯飞研究院（iFLYTEK Research）**，探索量子计算与人工智能的交叉领域，并研究**中性原子阵列的快速组装算法**。
 
 ## 研究兴趣
 
