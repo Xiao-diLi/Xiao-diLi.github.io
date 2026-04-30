@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s https://xiao-dili.github.io/sitemap.xml)",
+      "Bash(curl:*)",
+      "Bash(grep -r \"schema.org\\\\|ld+json\\\\|microdata\" '/Users/lixiaodi/Nutstore Files/个人/personal_homepage/Xiao-diLi.github.io' --include=*.html --include=*.yml)",
+      "WebFetch(domain:inspirehep.net)"
+    ]
+  }
+}
