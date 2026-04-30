@@ -18,6 +18,26 @@ layout: default
   {% include sidebar.html %}
 
   <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    {% if page.collection == 'publications' %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": {{ page.title | jsonify }},
+      "author": {
+        "@type": "Person",
+        "name": "Li Xiaodi",
+        "url": "https://xiao-dili.github.io"
+      },
+      "datePublished": "{{ page.date | date: '%Y-%m-%d' }}"{% if page.venue %},
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ page.venue | jsonify }}
+      }{% endif %}{% if page.paperurl %},
+      "url": {{ page.paperurl | jsonify }}{% endif %}
+    }
+    </script>
+    {% endif %}
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">{% endif %}

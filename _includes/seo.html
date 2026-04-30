@@ -97,6 +97,31 @@
   </script>
 {% endif %}
 
+{% if seo_description %}
+  <meta name="description" content="{{ seo_description }}">
+{% endif %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Li Xiaodi",
+  "alternateName": "李逍迪",
+  "jobTitle": "Postdoctoral Researcher",
+  "affiliation": {
+    "@type": "Organization",
+    "name": "Fudan University"
+  },
+  "knowsAbout": ["Quantum Computation", "Quantum Information Theory", "Quantum Error Correction"],
+  "url": "https://xiao-dili.github.io",
+  "sameAs": [
+    "https://scholar.google.com/citations?user=h80jD5gAAAAJ",
+    "https://github.com/Xiao-diLi",
+    "https://orcid.org/0000-0001-9208-7673"
+  ]
+}
+</script>
+
 {% if site.google_site_verification %}
   <meta name="google-site-verification" content="{{ site.google_site_verification }}" />
 {% endif %}
