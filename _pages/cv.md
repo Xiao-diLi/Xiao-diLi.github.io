@@ -18,6 +18,10 @@ Education
 
 Work Experience
 ======
+* 2025/10 – Present: **Researcher**
+  * iFLYTEK Research, Hefei
+  * Research: quantum computation, quantum AI
+
 * 2023/6 – 2025/10: **Postdoctoral Researcher**
   * Fudan University, Shanghai
   * Research: quantum state verification, entanglement certification, quantum information masking, neutral-atom array algorithms
@@ -47,6 +51,10 @@ Publications
 
 工作经历
 ======
+* 2025/10 至今：**研究员**
+  * 科大讯飞研究院（iFLYTEK Research），合肥
+  * 研究方向：量子计算、量子 AI
+
 * 2023/6 – 2025/10：**博士后研究员**
   * 复旦大学，上海
   * 研究方向：量子态验证、纠缠维度认证、量子信息掩蔽、中性原子阵列算法
