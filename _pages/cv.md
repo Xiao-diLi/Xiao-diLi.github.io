@@ -20,7 +20,7 @@ Work Experience
 ======
 * 2025/10 – Present: **Researcher**
   * iFLYTEK Research, Hefei
-  * Research: quantum computation, quantum AI, neutral-atom array algorithms
+  * Research: quantum computation, quantum AI, neutral-atom quantum computing
 
 * 2023/6 – 2025/10: **Postdoctoral Researcher**
   * Fudan University, Shanghai
@@ -53,7 +53,7 @@ Publications
 ======
 * 2025/10 至今：**研究员**
   * 科大讯飞研究院（iFLYTEK Research），合肥
-  * 研究方向：量子计算、量子 AI、中性原子阵列算法
+  * 研究方向：量子计算、量子 AI、中性原子量子计算
 
 * 2023/6 – 2025/10：**博士后研究员**
   * 复旦大学，上海
@@ -61,11 +61,11 @@ Publications
 
 * 2022/6 – 2023/6：**量子算法工程师**
   * 上海图灵量子科技有限公司
-  * 量子算法开发与工程实现
+  * 量子算法工程师
 
 * 2021/7 – 2022/5：**博士后研究员**
   * 中国科学技术大学，合肥
-  * 研究方向：理论高能物理、散射振幅
+  * 研究方向：高能物理形式理论、散射振幅
 
 论文发表
 ======
