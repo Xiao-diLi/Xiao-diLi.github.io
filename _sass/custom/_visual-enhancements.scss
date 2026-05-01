@@ -1,0 +1,109 @@
+/* ==========================================================================
+   VISUAL ENHANCEMENTS
+   Custom styles for modern, professional appearance
+   ========================================================================== */
+
+/* ---------- Typography ---------- */
+
+body {
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75em;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+/* ---------- Avatar ---------- */
+
+.author__avatar {
+  img {
+    max-width: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+}
+
+/* ---------- Masthead / Navigation ---------- */
+
+.masthead {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  &::after {
+    display: none; // shadow replaces the border line
+  }
+}
+
+.masthead__menu-item {
+  a {
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--global-link-color);
+    }
+  }
+}
+
+/* ---------- Links ---------- */
+
+.page__content {
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      border-bottom-color: var(--global-link-color);
+      text-decoration: none;
+    }
+  }
+
+  /* H2 divider */
+  h2 {
+    border-bottom: 2px solid var(--global-divider-color, var(--global-border-color));
+    padding-bottom: 0.5em;
+    margin-top: 2em;
+  }
+
+  /* Blockquote */
+  blockquote {
+    border-left: 4px solid var(--global-link-color);
+    background: var(--global-code-background-color);
+    padding: 1em 1.5em;
+    border-radius: 4px;
+    margin: 1.5em 0;
+  }
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

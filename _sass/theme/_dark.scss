@@ -51,4 +51,6 @@ html[data-theme="dark"] {
     --global-text-color                 : #{$text};
     --global-text-color-light           : #{$light-gray};
     --global-thead-color                : #{$background-lighter};
+    --global-divider-color              : #{$light-gray};
+    --global-code-border-color          : #{$light-gray};
 }
