@@ -5,5 +5,6 @@ permalink: /publication/2026-01-01-certifying-entanglement-dimensionality-by-red
 excerpt: 'We develop a practical method for certifying the dimensionality of quantum entanglement using reduction moments, providing efficient lower bounds on the Schmidt number.'
 date: 2026-01-01
 venue: 'PRX Quantum'
+authors: 'C Yi, X Li, H Zhu'
 paperurl: 'https://doi.org/10.1103/cc1n-gmj1'
 ---

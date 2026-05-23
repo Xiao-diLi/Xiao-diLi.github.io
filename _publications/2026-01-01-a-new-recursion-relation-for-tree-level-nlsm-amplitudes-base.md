@@ -5,5 +5,6 @@ permalink: /publication/2026-01-01-a-new-recursion-relation-for-tree-level-nlsm-
 excerpt: 'We derive a new recursion relation for tree-level nonlinear sigma model (NLSM) amplitudes by exploiting the hidden zero structure of scattering amplitudes.'
 date: 2026-01-01
 venue: 'Journal of High Energy Physics'
+authors: 'X Li, K Zhou'
 paperurl: 'https://doi.org/10.1007/JHEP01(2026)010'
 ---

@@ -130,6 +130,8 @@ for item in pubs:
         md += f"excerpt: '{html_escape(item['excerpt'])}'\n"
     md += f"date: {pub_date}\n"
     md += f"venue: '{html_escape(item['venue'])}'\n"
+    if item.get('authors'):
+        md += f"authors: '{html_escape(item['authors'])}'\n"
     if item['url']:
         md += f"paperurl: '{item['url']}'\n"
     md += "---\n"
