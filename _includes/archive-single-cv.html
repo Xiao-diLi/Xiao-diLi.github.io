@@ -1,42 +1,18 @@
-{% include base_path %}
-
-{% if post.header.teaser %}
-  {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
-{% else %}
-  {% assign teaser = site.teaser %}
-{% endif %}
-
-{% if post.id %}
-  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
-{% else %}
-  {% assign title = post.title %}
-{% endif %}
-
-<div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    <li>
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-          {% endif %}
-          alt="">
-      </div>
-    {% endif %}
-    <h3 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
-    </h3>
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-    {% if post.venue%}<p class="archive__item-excerpt" itemprop="description">{{ post.citation }}</p> {% endif %}
-    </li>
- </article>
-</div>
+{%- include base_path -%}
+{%- if post.id -%}
+{%- assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" | strip -%}
+{%- else -%}
+{%- assign title = post.title -%}
+{%- endif -%}
+{%- if post.venue contains 'arXiv' -%}
+{%- assign cv_pub_type = "preprint" -%}
+{%- else -%}
+{%- assign cv_pub_type = "journal" -%}
+{%- endif -%}
+<li class="cv-pub-item" itemscope itemtype="http://schema.org/ScholarlyArticle">
+  <span class="cv-pub-year">{{ post.date | default: "1900-01-01" | date: "%Y" }}</span>
+  <div class="cv-pub-body">
+  <div class="cv-pub-title" itemprop="headline">{%- if post.paperurl -%}<a href="{{ post.paperurl }}" target="_blank" rel="noopener noreferrer">{{ title }}<i class="fas fa-arrow-up-right-from-square pub-ext-icon" aria-hidden="true"></i></a>{%- elsif post.link -%}<a href="{{ post.link }}" target="_blank" rel="noopener noreferrer">{{ title }}</a>{%- else -%}<a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>{%- endif -%}</div>
+  <div class="cv-pub-meta">{%- if post.authors -%}<span class="cv-pub-authors">{{ post.authors | replace: "XD Li", "<strong>XD Li</strong>" | replace: "X Li", "<strong>X Li</strong>" }}</span>{%- endif -%}{%- if post.venue -%}<span class="cv-pub-venue">{%- if cv_pub_type == 'preprint' -%}<span class="pub-badge preprint-badge">{%- if page.lang == "zh-CN" -%}预印本{%- else -%}Preprint{%- endif -%}</span>{%- else -%}<span class="pub-badge journal-badge">{%- if page.lang == "zh-CN" -%}期刊论文{%- else -%}Journal{%- endif -%}</span>{%- endif -%}<span class="cv-pub-venue-name">{{ post.venue }}</span></span>{%- endif -%}</div>
+  </div>
+</li>

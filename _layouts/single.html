@@ -56,6 +56,15 @@ layout: default
         
         {% if page.collection == 'teaching' %}
           <p> {{ page.type }}, <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
+        {% elsif page.collection == 'publications' and page.venue %}
+          {% if page.authors %}
+            <p class="pub-authors">{{ page.authors | replace: "XD Li", "<strong>XD Li</strong>" | replace: "X Li", "<strong>X Li</strong>" }}</p>
+          {% endif %}
+          {% if page.venue contains 'arXiv' %}
+            <p class="pub-venue-container"><span class="pub-badge preprint-badge">Preprint</span> <i>{{ page.venue }}</i>, <span class="pub-year-inline">{{ page.date | default: "1900-01-01" | date: "%Y" }}</span></p>
+          {% else %}
+            <p class="pub-venue-container"><span class="pub-badge journal-badge">Journal Article</span> <i>{{ page.venue }}</i>, <span class="pub-year-inline">{{ page.date | default: "1900-01-01" | date: "%Y" }}</span></p>
+          {% endif %}
         {% elsif page.venue and page.date %}
           <p>Published in <i>{{ page.venue }}</i>, {{ page.date | default: "1900-01-01" | date: "%Y" }} </p>
         {% elsif page.date %}

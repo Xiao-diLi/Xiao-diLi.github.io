@@ -1,76 +1,94 @@
 ---
 layout: archive
-title: "CV"
+title: "Curriculum Vitae"
+seo_title: "CV | Li Xiaodi (李逍迪)"
+description: "Curriculum Vitae of Li Xiaodi: education, research experience at iFLYTEK Research, Fudan University, Turing Quantum, and USTC, and full publication list."
 permalink: /cv/
+lang: en
+og_locale: en_US
+alternate_og_locale: zh_CN
+alternate_lang: zh-CN
+alternate_url: /zh/cv/
+x_default_url: /cv/
 author_profile: true
 redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+{%- include base_path -%}
 
-<div class="lang-en" markdown="1">
-
-Education
-======
-* **Ph.D.** in Physics, Zhejiang University, 2016–2021
-* **B.S.** in Physics, Shandong University, 2012–2016
-
-Work Experience
-======
-* 2025/10 – Present: **Researcher**
-  * iFLYTEK Research, Hefei
-  * Research: quantum computation, quantum AI, neutral-atom quantum computing
-
-* 2023/6 – 2025/10: **Postdoctoral Researcher**
-  * Fudan University, Shanghai
-  * Research: quantum state verification, entanglement certification, quantum information masking
-
-* 2022/6 – 2023/6: **Quantum Algorithm Engineer**
-  * Turing Quantum (图灵量子), Shanghai
-  * Quantum algorithm development and engineering
-
-* 2021/7 – 2022/5: **Postdoctoral Researcher**
-  * University of Science and Technology of China (USTC), Hefei
-  * Research: theoretical high-energy physics, scattering amplitudes
-
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-
+<div class="cv-toolbar">
+  <p class="cv-toolbar__summary">Researcher at iFLYTEK Research · Ph.D. in Physics, Zhejiang University</p>
+  <button type="button" class="cv-print-btn" onclick="window.print()"><i class="fas fa-print" aria-hidden="true"></i><span>Print / Save PDF</span></button>
 </div>
 
-<div class="lang-zh" markdown="1">
+<section class="cv-section">
+  <h2 class="cv-section__title">Education</h2>
+  <ul class="cv-entries">
+  <li class="cv-entry">
+  <div class="cv-entry__period">2016 – 2021</div>
+  <div class="cv-entry__content">
+  <div class="cv-entry__role">Ph.D. in Physics</div>
+  <div class="cv-entry__org">Department of Physics, Zhejiang University · Hangzhou</div>
+  </div>
+  </li>
+  <li class="cv-entry">
+  <div class="cv-entry__period">2012 – 2016</div>
+  <div class="cv-entry__content">
+  <div class="cv-entry__role">B.S. in Physics</div>
+  <div class="cv-entry__org">School of Physics, Shandong University · Jinan</div>
+  </div>
+  </li>
+  </ul>
+</section>
 
-教育经历
-======
-* **博士**，物理系，浙江大学，2016–2021
-* **学士**，物理学院，山东大学，2012–2016
+<section class="cv-section">
+  <h2 class="cv-section__title">Work Experience</h2>
+  <ul class="cv-entries">
+  <li class="cv-entry">
+  <div class="cv-entry__period">2025/10 – Present</div>
+  <div class="cv-entry__content">
+  <div class="cv-entry__role">Researcher</div>
+  <div class="cv-entry__org">iFLYTEK Research · Hefei</div>
+  <div class="cv-entry__detail">Research: quantum computation, quantum AI, neutral-atom quantum computing</div>
+  </div>
+  </li>
+  <li class="cv-entry">
+  <div class="cv-entry__period">2023/06 – 2025/10</div>
+  <div class="cv-entry__content">
+  <div class="cv-entry__role">Postdoctoral Researcher</div>
+  <div class="cv-entry__org">Fudan University · Shanghai</div>
+  <div class="cv-entry__detail">Research: quantum state verification, entanglement certification, quantum information masking</div>
+  </div>
+  </li>
+  <li class="cv-entry">
+  <div class="cv-entry__period">2022/06 – 2023/06</div>
+  <div class="cv-entry__content">
+  <div class="cv-entry__role">Quantum Algorithm Engineer</div>
+  <div class="cv-entry__org">Turing Quantum (图灵量子) · Shanghai</div>
+  <div class="cv-entry__detail">Quantum algorithm development and engineering</div>
+  </div>
+  </li>
+  <li class="cv-entry">
+  <div class="cv-entry__period">2021/07 – 2022/05</div>
+  <div class="cv-entry__content">
+  <div class="cv-entry__role">Postdoctoral Researcher</div>
+  <div class="cv-entry__org">University of Science and Technology of China (USTC) · Hefei</div>
+  <div class="cv-entry__detail">Research: theoretical high-energy physics, scattering amplitudes</div>
+  </div>
+  </li>
+  </ul>
+</section>
 
-工作经历
-======
-* 2025/10 至今：**研究员**
-  * 科大讯飞研究院（iFLYTEK Research），合肥
-  * 研究方向：量子计算、量子 AI、中性原子量子计算
-
-* 2023/6 – 2025/10：**博士后研究员**
-  * 复旦大学，上海
-  * 研究方向：量子态验证、纠缠维度认证、量子信息掩蔽
-
-* 2022/6 – 2023/6：**量子算法工程师**
-  * 上海图灵量子科技有限公司
-  * 量子算法工程师
-
-* 2021/7 – 2022/5：**博士后研究员**
-  * 中国科学技术大学，合肥
-  * 研究方向：高能物理形式理论、散射振幅
-
-论文发表
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-
-</div>
+<section class="cv-section">
+  <div class="cv-section__header-row">
+  <h2 class="cv-section__title">Publications <span class="cv-section__count">{{ site.publications | size }}</span></h2>
+  <a class="cv-section__link" href="{{ base_path }}/publications/">View with abstracts <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+  </div>
+  <ol class="cv-pub-list">
+{%- assign cv_pubs = site.publications | sort: "date" | reverse -%}
+{%- for post in cv_pubs -%}
+{%- include archive-single-cv.html -%}
+{%- endfor -%}
+  </ol>
+</section>

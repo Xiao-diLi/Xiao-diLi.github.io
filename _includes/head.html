@@ -13,36 +13,22 @@
 
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  (function() {
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (saved === 'dark' || (!saved && prefersDark)) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
 </script>
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
 
 <meta http-equiv="cleartype" content="on">
-
-<style>
-  /* Bilingual logic */
-  body.lang-zh .lang-en { display: none !important; }
-  body:not(.lang-zh) .lang-zh { display: none !important; }
-
-  /* Smooth Transitions for Layout and Themes */
-  body, .masthead, .sidebar, .page, .archive__item, .btn, a, .pub-badge {
-    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.2s ease, box-shadow 0.3s ease, transform 0.2s ease;
-  }
-</style>
-<script>
-  function toggleLanguage() {
-    var isZh = document.body.classList.toggle('lang-zh');
-    localStorage.setItem('lang', isZh ? 'zh' : 'en');
-  }
-  document.addEventListener("DOMContentLoaded", function() {
-    if (localStorage.getItem('lang') === 'zh') {
-      document.body.classList.add('lang-zh');
-    }
-  });
-</script>

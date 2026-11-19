@@ -1,37 +1,66 @@
 ---
 layout: archive
 title: "Publications"
+seo_title: "Publications | Li Xiaodi (李逍迪)"
+description: "Research publications by Li Xiaodi in quantum computation, quantum information theory, neutral-atom arrays, and scattering amplitudes."
 permalink: /publications/
+lang: en
+og_locale: en_US
+alternate_og_locale: zh_CN
+alternate_lang: zh-CN
+alternate_url: /zh/publications/
+x_default_url: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap lang-en">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-  <div class="wordwrap lang-zh">您也可以在我的 <a href="{{site.author.googlescholar}}">Google Scholar 主页</a> 查看完整论文列表。</div>
-{% endif %}
-
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
+{% assign total_pubs = site.publications | size %}
+{% assign preprint_count = 0 %}
+{% for post in site.publications %}
+  {% if post.venue contains 'arXiv' %}
+    {% assign preprint_count = preprint_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+{% assign journal_count = total_pubs | minus: preprint_count %}
+
+<div class="page-intro-bar">
+  <p class="page-intro-lead">
+    Research spanning neutral-atom quantum computing, quantum information theory, and theoretical high-energy physics.
+    {% if site.author.googlescholar %}
+      Full citation metrics are available on <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Google Scholar</a>.
+    {% endif %}
+  </p>
+
+  <div class="pub-filter-bar" role="group" aria-label="Filter publications">
+    <button type="button" class="pub-filter-btn is-active" data-pub-filter="all" aria-pressed="true">
+      All <span class="pub-filter-count">{{ total_pubs }}</span>
+    </button>
+    <button type="button" class="pub-filter-btn" data-pub-filter="journal" aria-pressed="false">
+      Journal Articles <span class="pub-filter-count">{{ journal_count }}</span>
+    </button>
+    <button type="button" class="pub-filter-btn" data-pub-filter="preprint" aria-pressed="false">
+      Preprints <span class="pub-filter-count">{{ preprint_count }}</span>
+    </button>
+  </div>
+</div>
+
+{% assign pubs_sorted = site.publications | sort: "date" | reverse %}
+{% assign grouped_years = pubs_sorted | group_by_exp: "item", "item.date | date: '%Y'" %}
+
+<div class="pub-years-container">
+  {% for year_group in grouped_years %}
+    <section class="pub-year-group" data-year="{{ year_group.name }}">
+      <div class="pub-year-header">
+        <h2 class="pub-year-title">{{ year_group.name }}</h2>
+        <span class="pub-year-line" aria-hidden="true"></span>
+        <span class="pub-year-count">{{ year_group.items | size }} {% if year_group.items.size == 1 %}paper{% else %}papers{% endif %}</span>
+      </div>
+      <div class="pub-year-list">
+        {% for post in year_group.items %}
+          {% include archive-single.html %}
+        {% endfor %}
+      </div>
+    </section>
   {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
-
-
+</div>

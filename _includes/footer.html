@@ -1,25 +1,39 @@
 {% include base_path %}
 
-{% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
-<div class="page__footer-follow">
-  <ul class="social-icons">
-    {% if site.data.ui-text[site.locale].follow_label %}
-      <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
-    {% endif %}
-    {% if site.author.github %}
-      <li><a href="http://github.com/{{ site.author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
-    {% endif %}
-    {% if site.author.bitbucket %}
-      <li><a href="http://bitbucket.org/{{ site.author.bitbucket }}"><i class="fab fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
-    {% endif %}
-    {% if site.atom_feed.hide != true %}
-    <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].feed_label | default: "Feed" }}</a></li>
-    {% endif %}
-  </ul>
-</div>
+{% if page.lang == "zh-CN" %}
+  {% assign footer_name = "李逍迪" %}
+  {% assign footer_sitemap = "站点地图" %}
+  {% assign footer_feed = "RSS 订阅" %}
+  {% assign footer_updated = "最近更新" %}
+{% else %}
+  {% assign footer_name = site.name | default: site.title %}
+  {% assign footer_sitemap = "Sitemap" %}
+  {% assign footer_feed = site.data.ui-text[site.locale].feed_label | default: "Feed" %}
+  {% assign footer_updated = "Last updated" %}
 {% endif %}
 
-<div class="page__footer-copyright">
-  &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }}, {{ site.data.ui-text[site.locale].powered_by | default: "Powered by" }} <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/academicpages/academicpages.github.io">AcademicPages</a>, a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.<br />
-  Site last updated {{ "now" | date: '%Y-%m-%d' %}}
+<div class="footer-shell">
+  <div class="page__footer-copyright">
+    <span class="footer-copy-main">&copy; {{ site.time | date: '%Y' }} {{ footer_name }}</span>
+    <span class="footer-sep" aria-hidden="true">·</span>
+    <span>{{ footer_updated }} {{ "now" | date: '%Y-%m-%d' }}</span>
+  </div>
+
+  <div class="page__footer-follow">
+    <ul class="social-icons">
+      {% if site.author.googlescholar %}
+        <li><a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar" aria-hidden="true"></i> Scholar</a></li>
+      {% endif %}
+      {% if site.author.orcid %}
+        <li><a href="{{ site.author.orcid }}" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid" aria-hidden="true"></i> ORCID</a></li>
+      {% endif %}
+      {% if site.author.github %}
+        <li><a href="https://github.com/{{ site.author.github }}" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>
+      {% endif %}
+      {% if site.atom_feed.hide != true %}
+        <li><a href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ base_path }}/feed.xml{% endif %}"><i class="fa fa-fw fa-rss" aria-hidden="true"></i> {{ footer_feed }}</a></li>
+      {% endif %}
+      <li><a href="{{ base_path }}/sitemap/"><i class="fas fa-sitemap" aria-hidden="true"></i> {{ footer_sitemap }}</a></li>
+    </ul>
+  </div>
 </div>

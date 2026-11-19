@@ -2,6 +2,10 @@
    Various functions that we want to use within the template
    ========================================================================== */
 
+const browserPref = window.matchMedia('(prefers-color-scheme: dark)').matches
+  ? 'dark'
+  : 'light';
+
 // Determine the expected state of the theme toggle, which can be "dark", "light", or
 // "system". Default is "system".
 let determineThemeSetting = () => {
@@ -16,7 +20,7 @@ let determineComputedTheme = () => {
   if (themeSetting != "system") {
     return themeSetting;
   }
-  return (userPref && userPref("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+  return browserPref;
 };
 
 // Set the theme on page load or when explicitly called
@@ -30,9 +34,11 @@ let setTheme = (theme) => {
   if (use_theme === "dark") {
     $("html").attr("data-theme", "dark");
     $("#theme-icon").removeClass("fa-sun").addClass("fa-moon");
+    $('meta[name="theme-color"]').attr("content", "#0d1117");
   } else if (use_theme === "light") {
     $("html").removeAttr("data-theme");
     $("#theme-icon").removeClass("fa-moon").addClass("fa-sun");
+    $('meta[name="theme-color"]').attr("content", "#f8fafc");
   }
 };
 
@@ -79,11 +85,6 @@ document.addEventListener("readystatechange", () => {
    ========================================================================== */
 
 $(document).ready(function () {
-  // detect OS/browser preference
-  const browserPref = window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
-
   setTheme();
 
   // if user hasn't chosen a theme, follow OS changes
@@ -96,6 +97,50 @@ $(document).ready(function () {
     });
 
   $('#theme-toggle').on('click', toggleTheme);
+  $('#theme-toggle a').on('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleTheme();
+    }
+  });
+
+  // Subtle scroll elevation on masthead
+  var updateMastheadScroll = function () {
+    $('.masthead').toggleClass('masthead--scrolled', $(window).scrollTop() > 12);
+  };
+  updateMastheadScroll();
+  $(window).on('scroll', updateMastheadScroll);
+
+  // Interactive publication filter
+  var $pubFilterButtons = $('.pub-filter-btn');
+  if ($pubFilterButtons.length) {
+    var isZhPage = document.documentElement.lang && document.documentElement.lang.indexOf('zh') === 0;
+    $pubFilterButtons.on('click', function () {
+      var filter = $(this).data('pub-filter');
+      $pubFilterButtons.removeClass('is-active').attr('aria-pressed', 'false');
+      $(this).addClass('is-active').attr('aria-pressed', 'true');
+
+      $('.pub-year-group').each(function () {
+        var $group = $(this);
+        var visibleCount = 0;
+        $group.find('.pub-card').each(function () {
+          var $card = $(this);
+          var match = filter === 'all' || $card.data('pub-type') === filter;
+          $card.toggleClass('is-hidden', !match);
+          if (match) {
+            visibleCount += 1;
+          }
+        });
+        $group.toggleClass('is-hidden', visibleCount === 0);
+        if (visibleCount > 0) {
+          var label = isZhPage
+            ? visibleCount + ' 篇'
+            : visibleCount + (visibleCount === 1 ? ' paper' : ' papers');
+          $group.find('.pub-year-count').text(label);
+        }
+      });
+    });
+  }
 
   // These should be the same as the settings in _variables.scss
   const scssLarge = 925; // pixels

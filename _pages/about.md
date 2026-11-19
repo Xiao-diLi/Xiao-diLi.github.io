@@ -1,15 +1,44 @@
 ---
 permalink: /
-title: "About me / 个人简介"
+title: "Li Xiaodi (李逍迪)"
+seo_title: "Li Xiaodi (李逍迪) | Quantum Computing Researcher"
+description: "Li Xiaodi is a researcher at iFLYTEK Research working on quantum computation, quantum information theory, quantum AI, and neutral-atom quantum computing."
+lang: en
+og_locale: en_US
+alternate_og_locale: zh_CN
+alternate_lang: zh-CN
+alternate_url: /zh/
+x_default_url: /
 author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-<div class="lang-en" markdown="1">
+{%- include base_path -%}
+
+<div class="home-eyebrow">
+  <span class="home-eyebrow__dot" aria-hidden="true"></span>
+  <span>iFLYTEK Research · Quantum Computing &amp; Quantum AI</span>
+</div>
 
 I am a researcher at **iFLYTEK Research**, working on **quantum computation**, **quantum information theory**, and **quantum AI**.
+{: .home-lead}
+
+<div class="home-metrics" aria-label="Academic highlights">
+  <div class="home-metric">
+  <span class="home-metric__value">{{ site.publications | size }}</span>
+  <span class="home-metric__label">Papers &amp; Preprints</span>
+  </div>
+  <div class="home-metric">
+  <span class="home-metric__value">PRX Quantum · JHEP · PRD</span>
+  <span class="home-metric__label">Published Venues</span>
+  </div>
+  <div class="home-metric">
+  <span class="home-metric__value">Ph.D. Physics</span>
+  <span class="home-metric__label">Zhejiang University</span>
+  </div>
+</div>
 
 During my Ph.D. at Zhejiang University (2016–2021), I focused on theoretical high-energy physics, particularly on **scattering amplitudes** and **Feynman integral reduction**, developing new algebraic and differential-operator methods for computing one-loop integrals and expanding Einstein-Yang-Mills amplitudes. After graduating, I continued this line of research as a postdoctoral fellow at the University of Science and Technology of China (USTC).
 
@@ -17,52 +46,80 @@ In 2022, I joined Turing Quantum (Shanghai) as a quantum algorithm engineer, whe
 
 ## Research Interests
 
-- Quantum state verification
-- Quantum entanglement
-- Quantum error correction
-- Neutral-atom quantum computing
+<div class="research-grid">
+  <div class="research-card">
+  <div class="research-card__icon" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
+  <div class="research-card__body">
+  <h3>Quantum State Verification</h3>
+  <p>Classical shadow protocols and sample-efficient verification of quantum states.</p>
+  </div>
+  </div>
+  <div class="research-card">
+  <div class="research-card__icon" aria-hidden="true"><i class="fas fa-diagram-project"></i></div>
+  <div class="research-card__body">
+  <h3>Quantum Entanglement</h3>
+  <p>Entanglement dimensionality certification via moments and quantum information masking.</p>
+  </div>
+  </div>
+  <div class="research-card">
+  <div class="research-card__icon" aria-hidden="true"><i class="fas fa-cubes"></i></div>
+  <div class="research-card__body">
+  <h3>Quantum Error Correction</h3>
+  <p>Fault-tolerant quantum architectures and noise-resilient quantum algorithms.</p>
+  </div>
+  </div>
+  <div class="research-card">
+  <div class="research-card__icon" aria-hidden="true"><i class="fas fa-braille"></i></div>
+  <div class="research-card__body">
+  <h3>Neutral-Atom Quantum Computing</h3>
+  <p>Fast assembly of large-scale defect-free atom arrays and quantum AI methods.</p>
+  </div>
+  </div>
+</div>
+
+## Recent Publications
+
+<div class="home-pubs">
+{%- assign recent_pubs = site.publications | sort: "date" | reverse -%}
+{%- for post in recent_pubs limit:3 -%}
+  <article class="home-pub-item">
+  <div class="home-pub-item__top">
+  <span class="home-pub-item__year">{{ post.date | date: "%Y" }}</span>
+  {%- if post.venue contains 'arXiv' -%}<span class="pub-badge preprint-badge">Preprint</span>{%- else -%}<span class="pub-badge journal-badge">Journal</span>{%- endif -%}
+  <span class="home-pub-item__venue">{{ post.venue }}</span>
+  </div>
+  <h3 class="home-pub-item__title"><a href="{{ post.paperurl | default: post.url }}" target="_blank" rel="noopener noreferrer">{{ post.title }}<i class="fas fa-arrow-up-right-from-square pub-ext-icon" aria-hidden="true"></i></a></h3>
+  {%- if post.authors -%}<p class="home-pub-item__authors">{{ post.authors | replace: "XD Li", "<strong>XD Li</strong>" | replace: "X Li", "<strong>X Li</strong>" }}</p>{%- endif -%}
+  </article>
+{%- endfor -%}
+</div>
+
+<div class="home-actions">
+  <a class="btn btn--primary" href="{{ base_path }}/publications/"><i class="fas fa-book-open" aria-hidden="true"></i> View all {{ site.publications | size }} publications</a>
+  <a class="home-text-link" href="{{ base_path }}/cv/"><i class="fas fa-file-lines" aria-hidden="true"></i> Curriculum Vitae</a>
+  <a class="home-text-link" href="https://scholar.google.com/citations?user=h80jD5gAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar" aria-hidden="true"></i> Google Scholar</a>
+</div>
 
 ## Education
 
-- **Ph.D.** in Physics, Zhejiang University, 2016–2021
-- **B.S.** in Physics, Shandong University, 2012–2016
-
-## Selected Publications
-
-Please visit my [Google Scholar](https://scholar.google.com/citations?user=h80jD5gAAAAJ&hl=en) profile for a full list of publications.
+<ul class="education-list">
+  <li>
+  <div class="education-list__degree"><strong>Ph.D. in Physics</strong><span class="education-list__inst">Department of Physics, Zhejiang University</span></div>
+  <span class="education-list__period">2016 – 2021</span>
+  </li>
+  <li>
+  <div class="education-list__degree"><strong>B.S. in Physics</strong><span class="education-list__inst">School of Physics, Shandong University</span></div>
+  <span class="education-list__period">2012 – 2016</span>
+  </li>
+</ul>
 
 ## Contact
 
-Feel free to reach out if you are interested in collaboration or have any questions about my research. You can find my contact information in the sidebar.
-
-</div>
-
-<div class="lang-zh" markdown="1">
-
-我目前就职于**科大讯飞研究院（iFLYTEK Research）**，从事**量子计算**、**量子信息理论**与**量子 AI** 的研究工作。
-
-2012-2016年，在浙江大学读博期间，我的研究方向为高能物理形式理论，主要聚焦于**散射振幅**和 **Feynman 积分约化**，主要研究了 Einstein-Yang-Mills 振幅的展开问题，并发展了基于微分算子和代数方法的单圈积分计算新方法。毕业后，我在中国科学技术大学做了一年博士后，继续从事散射振幅方面研究。
-
-2022 年，我加入上海图灵量子担任量子算法工程师。2023 至 2025 年，我在复旦大学从事博士后研究工作，研究方向转向**量子信息理论**，包括基于经典影子（classical shadow）的量子态验证、纠缠维度认证以及量子信息掩蔽。目前，我就职于**科大讯飞研究院（iFLYTEK Research）**，探索量子计算与人工智能的交叉领域，主要关注**基于中性原子阵列量子计算**。
-
-## 研究兴趣
-
-- 量子态验证
-- 量子纠缠
-- 量子纠错
-- 中性原子量子计算
-
-## 教育经历
-
-- **博士**，物理系，浙江大学，2016–2021
-- **学士**，物理学院，山东大学，2012–2016
-
-## 代表性论文
-
-完整的论文列表请访问我的 [Google Scholar](https://scholar.google.com/citations?user=h80jD5gAAAAJ&hl=en) 主页。
-
-## 联系方式
-
-如果您对合作感兴趣，或对我的研究有任何问题，欢迎随时联系我。您可以在左侧边栏找到我的联系方式。
-
+<div class="home-contact-card">
+  <p>I welcome conversations about research collaboration in quantum computing, quantum information theory, and neutral-atom platforms. Academic profiles and links are available in the sidebar.</p>
+  <div class="home-contact-links">
+  <a href="https://scholar.google.com/citations?user=h80jD5gAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar" aria-hidden="true"></i> Google Scholar</a>
+  <a href="https://orcid.org/0000-0001-9208-7673" target="_blank" rel="noopener noreferrer"><i class="ai ai-orcid" aria-hidden="true"></i> ORCID</a>
+  <a href="https://github.com/Xiao-diLi" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+  </div>
 </div>

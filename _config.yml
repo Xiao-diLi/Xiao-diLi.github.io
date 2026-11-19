@@ -24,10 +24,14 @@ author:
   # Biographic information
   avatar           : "talk_xiaodi.jpg"
   name             : "Li Xiaodi（李逍迪）"
+  name_zh          : "李逍迪（Li Xiaodi）"
   pronouns         : # example: "she/her"  
   bio              : "Researcher at iFLYTEK Research. Quantum computation, quantum information, and quantum AI."
+  bio_zh           : "科大讯飞研究院研究员，主要从事量子计算、量子信息理论与量子 AI 研究。"
   location         : "Hefei, China"
+  location_zh      : "中国合肥"
   employer         : "iFLYTEK Research"
+  employer_zh      : "科大讯飞研究院"
   uri              : https://xiao-dili.github.io # URL
   email            : # "我名字拼音atfudan.edu.cn" 
 
@@ -138,13 +142,16 @@ facebook:
   app_id                 :
   publisher              :
 og_image                 :  # Social media default site image
-og_description           : "Li Xiaodi — Postdoctoral Researcher at Fudan University, specializing in quantum computation and quantum information theory."
+og_description           : "Li Xiaodi is a researcher at iFLYTEK Research specializing in quantum computation, quantum information theory, quantum AI, and neutral-atom quantum computing."
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
-  links: # An array of links to social media profiles
+  type                   : Person
+  name                   : "Li Xiaodi"
+  links:
+    - https://scholar.google.com/citations?user=h80jD5gAAAAJ
+    - https://github.com/Xiao-diLi
+    - https://orcid.org/0000-0001-9208-7673
 
 
 # Analytics

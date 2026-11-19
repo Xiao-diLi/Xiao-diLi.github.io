@@ -1,0 +1,66 @@
+---
+layout: archive
+title: "论文发表"
+seo_title: "论文发表 | 李逍迪"
+description: "李逍迪在量子计算、量子信息理论、中性原子阵列与散射振幅领域发表的学术论文与预印本列表。"
+permalink: /zh/publications/
+lang: zh-CN
+og_locale: zh_CN
+alternate_og_locale: en_US
+alternate_lang: en
+alternate_url: /publications/
+x_default_url: /publications/
+author_profile: true
+---
+
+{% include base_path %}
+
+{% assign total_pubs = site.publications | size %}
+{% assign preprint_count = 0 %}
+{% for post in site.publications %}
+  {% if post.venue contains 'arXiv' %}
+    {% assign preprint_count = preprint_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+{% assign journal_count = total_pubs | minus: preprint_count %}
+
+<div class="page-intro-bar">
+  <p class="page-intro-lead">
+    涵盖中性原子量子计算、量子信息理论与高能物理形式理论的研究工作。
+    {% if site.author.googlescholar %}
+      完整引用记录请访问 <a href="{{ site.author.googlescholar }}" target="_blank" rel="noopener noreferrer">Google Scholar 主页</a>。
+    {% endif %}
+  </p>
+
+  <div class="pub-filter-bar" role="group" aria-label="筛选论文类型">
+    <button type="button" class="pub-filter-btn is-active" data-pub-filter="all" aria-pressed="true">
+      全部 <span class="pub-filter-count">{{ total_pubs }}</span>
+    </button>
+    <button type="button" class="pub-filter-btn" data-pub-filter="journal" aria-pressed="false">
+      期刊论文 <span class="pub-filter-count">{{ journal_count }}</span>
+    </button>
+    <button type="button" class="pub-filter-btn" data-pub-filter="preprint" aria-pressed="false">
+      预印本 <span class="pub-filter-count">{{ preprint_count }}</span>
+    </button>
+  </div>
+</div>
+
+{% assign pubs_sorted = site.publications | sort: "date" | reverse %}
+{% assign grouped_years = pubs_sorted | group_by_exp: "item", "item.date | date: '%Y'" %}
+
+<div class="pub-years-container">
+  {% for year_group in grouped_years %}
+    <section class="pub-year-group" data-year="{{ year_group.name }}">
+      <div class="pub-year-header">
+        <h2 class="pub-year-title">{{ year_group.name }}</h2>
+        <span class="pub-year-line" aria-hidden="true"></span>
+        <span class="pub-year-count">{{ year_group.items | size }} 篇</span>
+      </div>
+      <div class="pub-year-list">
+        {% for post in year_group.items %}
+          {% include archive-single.html %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endfor %}
+</div>
