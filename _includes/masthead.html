@@ -22,50 +22,41 @@
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        <button aria-label="{{ nav_menu_aria }}"><div class="navicon"></div></button>
-        <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist">
-            <a href="{{ base_path }}{{ home_path }}"{% if page.url == home_path %} aria-current="page"{% endif %}>
-              <span class="brand-lattice" aria-hidden="true">
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <line x1="4.5" y1="4.5" x2="13.5" y2="4.5" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.2"/>
-                  <line x1="4.5" y1="13.5" x2="13.5" y2="13.5" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.2"/>
-                  <line x1="4.5" y1="4.5" x2="4.5" y2="13.5" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.2"/>
-                  <line x1="13.5" y1="4.5" x2="13.5" y2="13.5" stroke="currentColor" stroke-opacity="0.35" stroke-width="1.2"/>
-                  <circle cx="4.5" cy="4.5" r="2.2" fill="currentColor"/>
-                  <circle cx="13.5" cy="4.5" r="2.2" fill="var(--secondary-color)"/>
-                  <circle cx="4.5" cy="13.5" r="2.2" fill="var(--secondary-color)"/>
-                  <circle cx="13.5" cy="13.5" r="2.2" fill="currentColor"/>
-                </svg>
-              </span>
-              <span>{{ brand_label }}</span>
-            </a>
-          </li>
-          {% if page.lang == "zh-CN" %}
-            <li class="masthead__menu-item"><a href="{{ base_path }}/zh/publications/"{% if page.url == "/zh/publications/" %} aria-current="page"{% endif %}>论文</a></li>
-            <li class="masthead__menu-item"><a href="{{ base_path }}/zh/cv/"{% if page.url == "/zh/cv/" %} aria-current="page"{% endif %}>简历</a></li>
-            <li class="masthead__menu-item"><a href="{{ base_path }}/year-archive/"{% if page.url == "/year-archive/" %} aria-current="page"{% endif %}>博客</a></li>
-          {% else %}
-            {% for link in site.data.navigation.main %}
-              {% if link.url contains 'http' %}
-                {% assign domain = '' %}
-              {% else %}
-                {% assign domain = base_path %}
-              {% endif %}
-              <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
-            {% endfor %}
-          {% endif %}
-          <li id="lang-toggle" class="masthead__menu-item persist tail">
-            <a href="{{ base_path }}{{ language_path }}" hreflang="{{ language_code }}" lang="{{ language_code }}" title="{{ language_title }}" aria-label="{{ language_title }}">{{ language_label }}</a>
-          </li>
-          <li id="theme-toggle" class="masthead__menu-item persist tail">
-            <a role="button" tabindex="0" title="{{ theme_title }}" aria-label="{{ theme_title }}"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true"></i></a>
-          </li>
-        </ul>
-        <ul class="hidden-links hidden"></ul>
-      </nav>
+    <a class="site-brand" href="{{ base_path }}{{ home_path }}"{% if page.url == home_path %} aria-current="page"{% endif %}>{{ brand_label }}</a>
+
+    <nav id="site-nav" class="greedy-nav" aria-label="Main navigation">
+      <button class="greedy-nav__toggle hidden" type="button" aria-label="{{ nav_menu_aria }}"><span class="navicon"></span></button>
+      <ul class="visible-links">
+        {% if page.lang == "zh-CN" %}
+          <li class="masthead__menu-item"><a href="{{ base_path }}/zh/publications/"{% if page.url == "/zh/publications/" %} aria-current="page"{% endif %}>论文</a></li>
+          <li class="masthead__menu-item"><a href="{{ base_path }}/zh/cv/"{% if page.url == "/zh/cv/" %} aria-current="page"{% endif %}>简历</a></li>
+          <li class="masthead__menu-item"><a href="{{ base_path }}/year-archive/"{% if page.url == "/year-archive/" %} aria-current="page"{% endif %}>博客</a></li>
+        {% else %}
+          {% for link in site.data.navigation.main %}
+            {% if link.url contains 'http' %}
+              {% assign domain = '' %}
+            {% else %}
+              {% assign domain = base_path %}
+            {% endif %}
+            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+          {% endfor %}
+        {% endif %}
+      </ul>
+      <ul class="hidden-links hidden"></ul>
+    </nav>
+
+    <div class="masthead__actions">
+      <span class="masthead__divider" aria-hidden="true"></span>
+      <a id="lang-toggle" class="masthead__action-btn" href="{{ base_path }}{{ language_path }}" hreflang="{{ language_code }}" lang="{{ language_code }}" title="{{ language_title }}" aria-label="{{ language_title }}">{{ language_label }}</a>
+      <button id="theme-toggle" class="masthead__action-btn masthead__action-btn--icon" type="button" title="{{ theme_title }}" aria-label="{{ theme_title }}">
+        <svg class="theme-svg theme-svg--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="theme-svg theme-svg--sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+        </svg>
+      </button>
     </div>
   </div>
 </div>

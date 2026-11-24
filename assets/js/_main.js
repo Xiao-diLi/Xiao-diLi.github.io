@@ -97,12 +97,6 @@ $(document).ready(function () {
     });
 
   $('#theme-toggle').on('click', toggleTheme);
-  $('#theme-toggle a').on('keydown', function (e) {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      toggleTheme();
-    }
-  });
 
   // Subtle scroll elevation on masthead
   var updateMastheadScroll = function () {

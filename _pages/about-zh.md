@@ -10,32 +10,20 @@ alternate_lang: en
 alternate_url: /
 x_default_url: /
 author_profile: true
+hide_title: true
 ---
 
 {%- include base_path -%}
 
-<div class="home-eyebrow">
-  <span class="home-eyebrow__dot" aria-hidden="true"></span>
-  <span>科大讯飞研究院 · 量子计算与量子 AI</span>
-</div>
+<h1 class="sr-only" itemprop="headline">李逍迪</h1>
+
+<figure class="home-hero">
+  <img class="home-hero__img" src="{{ base_path }}/images/hero-desert.jpg" alt="李逍迪拍摄的沙漠剪影摄影作品" />
+  <figcaption class="home-hero__credit">摄影 · 李逍迪</figcaption>
+</figure>
 
 我目前就职于**科大讯飞研究院（iFLYTEK Research）**，从事**量子计算**、**量子信息理论**与**量子 AI** 的研究工作。
 {: .home-lead}
-
-<div class="home-metrics" aria-label="学术概览">
-  <div class="home-metric">
-  <span class="home-metric__value">{{ site.publications | size }}</span>
-  <span class="home-metric__label">论文与预印本</span>
-  </div>
-  <div class="home-metric">
-  <span class="home-metric__value">PRX Quantum · JHEP · PRD</span>
-  <span class="home-metric__label">代表发表期刊</span>
-  </div>
-  <div class="home-metric">
-  <span class="home-metric__value">物理学博士</span>
-  <span class="home-metric__label">浙江大学</span>
-  </div>
-</div>
 
 2016–2021 年，在浙江大学读博期间，我的研究方向为高能物理形式理论，主要聚焦于**散射振幅**和 **Feynman 积分约化**，研究了 Einstein-Yang-Mills 振幅的展开问题，并发展了基于微分算子和代数方法的单圈积分计算新方法。毕业后，我在中国科学技术大学从事博士后研究，继续开展散射振幅方面的工作。
 

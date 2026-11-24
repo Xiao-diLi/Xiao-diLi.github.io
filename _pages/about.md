@@ -10,6 +10,7 @@ alternate_lang: zh-CN
 alternate_url: /zh/
 x_default_url: /
 author_profile: true
+hide_title: true
 redirect_from:
   - /about/
   - /about.html
@@ -17,28 +18,15 @@ redirect_from:
 
 {%- include base_path -%}
 
-<div class="home-eyebrow">
-  <span class="home-eyebrow__dot" aria-hidden="true"></span>
-  <span>iFLYTEK Research · Quantum Computing &amp; Quantum AI</span>
-</div>
+<h1 class="sr-only" itemprop="headline">Li Xiaodi (李逍迪)</h1>
+
+<figure class="home-hero">
+  <img class="home-hero__img" src="{{ base_path }}/images/hero-desert.jpg" alt="Desert dune silhouette photographed by Li Xiaodi" />
+  <figcaption class="home-hero__credit">Photo · Li Xiaodi</figcaption>
+</figure>
 
 I am a researcher at **iFLYTEK Research**, working on **quantum computation**, **quantum information theory**, and **quantum AI**.
 {: .home-lead}
-
-<div class="home-metrics" aria-label="Academic highlights">
-  <div class="home-metric">
-  <span class="home-metric__value">{{ site.publications | size }}</span>
-  <span class="home-metric__label">Papers &amp; Preprints</span>
-  </div>
-  <div class="home-metric">
-  <span class="home-metric__value">PRX Quantum · JHEP · PRD</span>
-  <span class="home-metric__label">Published Venues</span>
-  </div>
-  <div class="home-metric">
-  <span class="home-metric__value">Ph.D. Physics</span>
-  <span class="home-metric__label">Zhejiang University</span>
-  </div>
-</div>
 
 During my Ph.D. at Zhejiang University (2016–2021), I focused on theoretical high-energy physics, particularly on **scattering amplitudes** and **Feynman integral reduction**, developing new algebraic and differential-operator methods for computing one-loop integrals and expanding Einstein-Yang-Mills amplitudes. After graduating, I continued this line of research as a postdoctoral fellow at the University of Science and Technology of China (USTC).
 

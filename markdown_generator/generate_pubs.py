@@ -3,6 +3,15 @@ import re
 
 pubs = [
     {
+        "title": "Reducing RSA-2048 Factoring Resources Below One Billion Toffolis via LLM-Driven Verifiable Quantum Compilation",
+        "authors": "X Li, Y Wang, X Chen, YY Tang, L Chen, T Zhang",
+        "venue": "arXiv preprint arXiv:2611.31158",
+        "year": "2026",
+        "date": "2026-11-23",
+        "url": "https://arxiv.org/abs/2611.31158",
+        "excerpt": "We use LLM-driven cross-stage search and verifiable bit-level compilation to redesign the approximate RNS pipeline for Shor's algorithm, cutting the minimum qubit–Toffoli product by 70.1% and bringing RSA-2048 factoring below one billion Toffolis for the first time."
+    },
+    {
         "title": "An Algorithm for Fast Assembling Large-Scale Defect-Free Atom Arrays",
         "authors": "T Zhang, X Li, H Zhai, L Chen",
         "venue": "arXiv preprint arXiv:2604.08669",
@@ -117,7 +126,7 @@ for f in os.listdir(out_dir):
         os.remove(os.path.join(out_dir, f))
 
 for item in pubs:
-    pub_date = item['year'] + "-01-01"
+    pub_date = item.get('date', item['year'] + "-01-01")
     url_slug = get_slug(item['title'])
     
     md_filename = f"{pub_date}-{url_slug}.md"
