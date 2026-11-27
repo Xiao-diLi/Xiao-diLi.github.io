@@ -11,6 +11,7 @@ alternate_url: /
 x_default_url: /
 author_profile: true
 hide_title: true
+has_cover: true
 ---
 
 {%- include base_path -%}

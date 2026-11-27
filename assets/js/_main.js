@@ -98,6 +98,18 @@ $(document).ready(function () {
 
   $('#theme-toggle').on('click', toggleTheme);
 
+  // Optional visual style toggle (Default Modern <-> Archival Paper)
+  $('#style-toggle').on('click', function () {
+    var isArchival = $('html').attr('data-style') === 'archival';
+    if (isArchival) {
+      $('html').removeAttr('data-style');
+      try { localStorage.setItem('site-style', 'default'); } catch (e) {}
+    } else {
+      $('html').attr('data-style', 'archival');
+      try { localStorage.setItem('site-style', 'archival'); } catch (e) {}
+    }
+  });
+
   // Subtle scroll elevation on masthead
   var updateMastheadScroll = function () {
     $('.masthead').toggleClass('masthead--scrolled', $(window).scrollTop() > 12);

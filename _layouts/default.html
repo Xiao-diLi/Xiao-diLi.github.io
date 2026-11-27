@@ -11,8 +11,9 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-  <body>
+  <body{% if page.has_cover %} class="has-desert-cover"{% endif %}>
 
+    {% if page.has_cover %}{% include desert-cover.html %}{% endif %}
     {% include browser-upgrade.html %}
     {% include masthead.html %}
 
@@ -26,6 +27,7 @@ layout: compress
     </div>
 
     {% include scripts.html %}
+    {% if page.has_cover %}<script src="{{ base_path }}/assets/js/cover.js" defer></script>{% endif %}
 
   </body>
 </html>

@@ -2,32 +2,43 @@
 
 {% if page.lang == "zh-CN" %}
   {% assign home_path = "/zh/" %}
+  {% assign brand_href = "/zh/#home" %}
   {% assign brand_label = "李逍迪" %}
   {% assign language_path = page.alternate_url | default: "/" %}
+  {% if page.has_cover %}{% assign language_href = language_path | append: "#home" %}{% else %}{% assign language_href = language_path %}{% endif %}
   {% assign language_code = "en" %}
   {% assign language_label = "EN" %}
   {% assign language_title = "Switch to English" %}
   {% assign theme_title = "切换明暗主题" %}
+  {% assign style_title = "切换纸墨风格 / 默认风格" %}
+  {% assign style_label_archival = "纸墨" %}
+  {% assign style_label_modern = "默认" %}
   {% assign nav_menu_aria = "打开导航菜单" %}
 {% else %}
   {% assign home_path = "/" %}
+  {% assign brand_href = "/#home" %}
   {% assign brand_label = site.name %}
   {% assign language_path = page.alternate_url | default: "/zh/" %}
+  {% if page.has_cover %}{% assign language_href = language_path | append: "#home" %}{% else %}{% assign language_href = language_path %}{% endif %}
   {% assign language_code = "zh-CN" %}
   {% assign language_label = "中文" %}
   {% assign language_title = "切换到中文" %}
   {% assign theme_title = "Toggle color theme" %}
+  {% assign style_title = "Switch between Default and Archival Paper theme" %}
+  {% assign style_label_archival = "Archival" %}
+  {% assign style_label_modern = "Modern" %}
   {% assign nav_menu_aria = "Open navigation menu" %}
 {% endif %}
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
-    <a class="site-brand" href="{{ base_path }}{{ home_path }}"{% if page.url == home_path %} aria-current="page"{% endif %}>{{ brand_label }}</a>
+    <a class="site-brand" href="{{ base_path }}{{ brand_href }}"{% if page.url == home_path %} aria-current="page"{% endif %}>{{ brand_label }}</a>
 
     <nav id="site-nav" class="greedy-nav" aria-label="Main navigation">
       <button class="greedy-nav__toggle hidden" type="button" aria-label="{{ nav_menu_aria }}"><span class="navicon"></span></button>
       <ul class="visible-links">
         {% if page.lang == "zh-CN" %}
+          <li class="masthead__menu-item"><a href="{{ base_path }}/zh/" data-open-cover="true">封面</a></li>
           <li class="masthead__menu-item"><a href="{{ base_path }}/zh/publications/"{% if page.url == "/zh/publications/" %} aria-current="page"{% endif %}>论文</a></li>
           <li class="masthead__menu-item"><a href="{{ base_path }}/zh/cv/"{% if page.url == "/zh/cv/" %} aria-current="page"{% endif %}>简历</a></li>
           <li class="masthead__menu-item"><a href="{{ base_path }}/year-archive/"{% if page.url == "/year-archive/" %} aria-current="page"{% endif %}>博客</a></li>
@@ -38,7 +49,7 @@
             {% else %}
               {% assign domain = base_path %}
             {% endif %}
-            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
+            <li class="masthead__menu-item"><a href="{{ domain }}{{ link.url }}"{% if link.open_cover %} data-open-cover="true"{% elsif page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
           {% endfor %}
         {% endif %}
       </ul>
@@ -47,7 +58,11 @@
 
     <div class="masthead__actions">
       <span class="masthead__divider" aria-hidden="true"></span>
-      <a id="lang-toggle" class="masthead__action-btn" href="{{ base_path }}{{ language_path }}" hreflang="{{ language_code }}" lang="{{ language_code }}" title="{{ language_title }}" aria-label="{{ language_title }}">{{ language_label }}</a>
+      <button id="style-toggle" class="masthead__action-btn masthead__style-btn" type="button" title="{{ style_title }}" aria-label="{{ style_title }}">
+        <span class="style-label-to-archival">{{ style_label_archival }}</span>
+        <span class="style-label-to-modern">{{ style_label_modern }}</span>
+      </button>
+      <a id="lang-toggle" class="masthead__action-btn" href="{{ base_path }}{{ language_href }}" hreflang="{{ language_code }}" lang="{{ language_code }}" title="{{ language_title }}" aria-label="{{ language_title }}">{{ language_label }}</a>
       <button id="theme-toggle" class="masthead__action-btn masthead__action-btn--icon" type="button" title="{{ theme_title }}" aria-label="{{ theme_title }}">
         <svg class="theme-svg theme-svg--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>

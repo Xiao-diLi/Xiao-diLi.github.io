@@ -2026,3 +2026,641 @@ html[data-theme="dark"] .theme-svg--sun {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ==========================================================================
+   OPTIONAL ARCHIVAL PAPER THEME (html[data-style="archival"])
+   Inspired by timeline.laoqianriritan.com — Paper, Ink, Hairlines & Vermilion
+   ========================================================================== */
+
+.masthead__style-btn {
+  gap: 5px;
+  border: 1px solid var(--card-border);
+  background: var(--surface-subtle);
+  color: var(--text-body) !important;
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #a8452b;
+    flex-shrink: 0;
+  }
+
+  .style-label-to-modern {
+    display: none;
+  }
+}
+
+html[data-style="archival"] {
+  --font-family-header: 'Newsreader', 'Noto Serif SC', 'Songti SC', Georgia, serif;
+  --font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+
+  --primary-color: #a8452b;
+  --primary-hover: #89341e;
+  --primary-light: rgba(168, 69, 43, 0.08);
+  --primary-ring: rgba(168, 69, 43, 0.25);
+
+  --secondary-color: #2e7d6f;
+  --secondary-light: rgba(46, 125, 111, 0.09);
+
+  --bg-color: #ffffff;
+  --card-bg: #fcfcfc;
+  --surface-subtle: #f5f5f2;
+  --card-border: #e5e5e0;
+  --card-border-strong: #d0d0ca;
+  --card-shadow: none;
+  --card-shadow-hover: none;
+
+  --masthead-bg: rgba(255, 255, 255, 0.96);
+  --masthead-shadow-scrolled: none;
+
+  --text-main: #161614;
+  --text-body: #343330;
+  --text-muted: #787771;
+
+  --badge-preprint-bg: rgba(168, 69, 43, 0.08);
+  --badge-preprint-text: #9c3b23;
+  --badge-preprint-border: rgba(168, 69, 43, 0.22);
+
+  --badge-journal-bg: rgba(46, 125, 111, 0.09);
+  --badge-journal-text: #25685c;
+  --badge-journal-border: rgba(46, 125, 111, 0.22);
+
+  --selection-bg: rgba(168, 69, 43, 0.16);
+
+  --global-base-color: #4c4b47;
+  --global-bg-color: var(--bg-color);
+  --global-text-color: var(--text-body);
+  --global-text-color-light: var(--text-muted);
+  --global-link-color: var(--primary-color);
+  --global-link-color-hover: var(--primary-hover);
+  --global-link-color-visited: var(--primary-color);
+  --global-masthead-link-color: var(--text-main);
+  --global-masthead-link-color-hover: var(--primary-color);
+  --global-border-color: var(--card-border);
+  --global-dark-border-color: var(--card-border);
+  --global-divider-color: var(--card-border);
+  --global-code-background-color: var(--surface-subtle);
+  --global-code-text-color: var(--text-main);
+  --global-code-border-color: var(--card-border);
+
+  body {
+    background-image: none !important;
+    background-color: var(--bg-color);
+  }
+
+  .masthead {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid var(--card-border);
+    box-shadow: none !important;
+  }
+
+  .site-brand {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .masthead__style-btn {
+    background: #161614;
+    border-color: #161614;
+    color: #ffffff !important;
+
+    &::before {
+      background: #e27d60;
+    }
+
+    &:hover {
+      background: #2b2b27;
+      border-color: #2b2b27;
+      color: #ffffff !important;
+    }
+
+    .style-label-to-archival {
+      display: none;
+    }
+
+    .style-label-to-modern {
+      display: inline;
+    }
+  }
+
+  .masthead__menu-item a,
+  .masthead__action-btn {
+    border-radius: 3px;
+  }
+
+  .sidebar {
+    border-radius: 3px !important;
+    border-top: 2px solid var(--text-main) !important;
+    box-shadow: none !important;
+  }
+
+  .author__avatar img {
+    border-radius: 3px !important;
+    box-shadow: none;
+  }
+
+  .author__urls li a {
+    border-radius: 3px;
+  }
+
+  .page__content h2,
+  .cv-section__title {
+    font-weight: 600;
+    letter-spacing: 0.01em;
+
+    &::after {
+      width: 28px;
+      height: 2px;
+      background: var(--primary-color);
+      border-radius: 0;
+    }
+  }
+
+  .home-hero {
+    border-radius: 3px;
+    border-color: var(--card-border-strong);
+  }
+
+  .home-hero__img {
+    filter: grayscale(16%) contrast(1.04);
+  }
+
+  .home-lead {
+    font-family: var(--font-family-header);
+    font-size: 1.18rem !important;
+    line-height: 1.8;
+  }
+
+  .research-card,
+  .home-pub-item,
+  .education-list,
+  .home-contact-card,
+  .list__item,
+  .cv-toolbar,
+  .cv-entries,
+  .cv-pub-list,
+  .pub-filter-bar {
+    border-radius: 3px;
+    box-shadow: none !important;
+  }
+
+  .research-card:hover,
+  .home-pub-item:hover,
+  .list__item:hover {
+    transform: none;
+    border-color: var(--text-main);
+    background: #ffffff;
+  }
+
+  .research-card__icon {
+    border-radius: 3px;
+    background: var(--surface-subtle);
+    color: var(--text-main);
+  }
+
+  .research-card:hover .research-card__icon {
+    background: var(--primary-color);
+    color: #ffffff;
+  }
+
+  .pub-filter-btn,
+  .pub-badge,
+  .pub-year-chip,
+  .home-contact-links a,
+  .cv-print-btn,
+  .btn,
+  .home-actions .btn--primary,
+  .home-text-link {
+    border-radius: 3px;
+  }
+
+  .home-actions .btn--primary {
+    background: var(--text-main);
+    box-shadow: none;
+
+    &:hover {
+      background: var(--primary-color);
+      filter: none;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  .pub-filter-btn.is-active {
+    background: var(--text-main);
+    color: #ffffff;
+    border-color: var(--text-main);
+    box-shadow: none;
+
+    .pub-filter-count {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+    }
+  }
+}
+
+html[data-theme="dark"][data-style="archival"] {
+  --primary-color: #df6f51;
+  --primary-hover: #ee896d;
+  --primary-light: rgba(223, 111, 81, 0.14);
+  --primary-ring: rgba(223, 111, 81, 0.30);
+
+  --secondary-color: #5ab09f;
+  --secondary-light: rgba(90, 176, 159, 0.14);
+
+  --bg-color: #121210;
+  --card-bg: #181815;
+  --surface-subtle: #20201c;
+  --card-border: #2b2b27;
+  --card-border-strong: #3d3d37;
+  --masthead-bg: rgba(18, 18, 16, 0.96);
+
+  --text-main: #ecebe6;
+  --text-body: #c9c8c0;
+  --text-muted: #8b8a82;
+
+  --badge-preprint-bg: rgba(223, 111, 81, 0.15);
+  --badge-preprint-text: #f0957c;
+  --badge-preprint-border: rgba(223, 111, 81, 0.28);
+
+  --badge-journal-bg: rgba(90, 176, 159, 0.15);
+  --badge-journal-text: #7fd1c0;
+  --badge-journal-border: rgba(90, 176, 159, 0.28);
+
+  .masthead__style-btn {
+    background: #ecebe6;
+    border-color: #ecebe6;
+    color: #121210 !important;
+
+    &:hover {
+      background: #ffffff;
+      color: #121210 !important;
+    }
+  }
+
+  .research-card:hover,
+  .home-pub-item:hover,
+  .list__item:hover {
+    background: #1d1d19;
+    border-color: #6b6a62;
+  }
+
+  .pub-filter-btn.is-active {
+    background: #ecebe6;
+    color: #121210;
+    border-color: #ecebe6;
+
+    .pub-filter-count {
+      background: rgba(18, 18, 16, 0.16);
+      color: #121210;
+    }
+  }
+
+  .home-actions .btn--primary {
+    background: #ecebe6;
+    color: #121210 !important;
+
+    &:hover {
+      background: var(--primary-color);
+      color: #ffffff !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   INTEGRATED FULL-VIEWPORT DESERT COVER (_includes/desert-cover.html)
+   Click anywhere on the cover to enter the original homepage seamlessly
+   ========================================================================== */
+
+html:not(.cover-dismissed) body.has-desert-cover {
+  overflow: hidden;
+}
+
+.cover-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background: transparent;
+  color: #f4f3ee;
+  user-select: none;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+}
+
+html.cover-dismissed .cover-stage {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.cover-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: #0e1014;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 1.35s cubic-bezier(0.22, 1, 0.36, 1) 0.18s;
+}
+
+.cover-photo-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  background: #14171c;
+  will-change: left, top, width, height, border-radius;
+}
+
+.cover-ui {
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 1;
+  transition: opacity 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.82s;
+}
+
+.cover-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 56% 58%;
+  filter: brightness(0.60) contrast(1.14) saturate(0.42);
+  z-index: 0;
+}
+
+.cover-atmosphere {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  background:
+    linear-gradient(180deg, rgba(8, 10, 16, 0.72) 0%, rgba(11, 13, 19, 0.36) 44%, rgba(10, 11, 15, 0.14) 72%, rgba(7, 8, 11, 0.60) 100%);
+  transition: background 0.8s ease, opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.45s;
+}
+
+.cover-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.72s;
+}
+
+/* Shared-Element Morph: Cover Desert Photo <-> Homepage .home-hero (2.0s pacing) */
+html.cover-morphing .home-hero {
+  visibility: hidden !important;
+}
+
+html.cover-entering .cover-stage {
+  pointer-events: none;
+}
+
+html.cover-entering .cover-backdrop {
+  opacity: 0;
+  transition: opacity 1.45s cubic-bezier(0.22, 1, 0.36, 1) 0.28s;
+}
+
+html.cover-entering .cover-atmosphere,
+html.cover-entering .cover-canvas {
+  opacity: 0;
+  transition: opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+}
+
+html.cover-entering .cover-ui {
+  opacity: 0;
+  transition: opacity 0.68s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.cover-entering .cover-title {
+  letter-spacing: 0.16em;
+  transform: translateY(-16px);
+}
+
+/* Initial starting state for Reverse Morph (clicking "封面 / Cover" from homepage) */
+html.cover-returning .cover-backdrop,
+html.cover-returning .cover-atmosphere,
+html.cover-returning .cover-canvas,
+html.cover-returning .cover-ui {
+  opacity: 0;
+  transition: none !important;
+}
+
+/* Surrounding homepage elements emerge calmly around the stationary .home-hero slot */
+@keyframes home-surround-emerge {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes masthead-portal-emerge {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+html.cover-revealing .sidebar,
+html.cover-revealing .page__content > *:not(.home-hero),
+html.cover-revealing .page__footer {
+  animation: home-surround-emerge 1.45s cubic-bezier(0.22, 1, 0.36, 1) 0.52s both;
+}
+
+html.cover-revealing .masthead {
+  animation: masthead-portal-emerge 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.58s both;
+}
+
+/* Day ("昼") Warm Silver Paper Atmosphere */
+.cover-stage.cover-stage--day {
+  color: #161614;
+
+  .cover-bg-img {
+    filter: brightness(1.06) contrast(1.04) saturate(0.22);
+  }
+
+  .cover-atmosphere {
+    background:
+      linear-gradient(180deg, rgba(247, 246, 241, 0.62) 0%, rgba(244, 243, 238, 0.22) 46%, rgba(20, 20, 18, 0.08) 74%, rgba(16, 16, 14, 0.56) 100%);
+  }
+
+  .cover-pill-btn {
+    color: #161614 !important;
+    background: rgba(255, 255, 255, 0.64);
+    border-color: rgba(22, 22, 20, 0.20);
+
+    &:hover {
+      background: #161614;
+      color: #ffffff !important;
+      border-color: #161614;
+    }
+  }
+
+  .cover-title {
+    color: #161614;
+    text-shadow: 0 2px 24px rgba(255, 255, 255, 0.55);
+  }
+}
+
+.cover-topbar {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 36px 0;
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.cover-topbar__spacer {
+  display: block;
+}
+
+.cover-topbar__right {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cover-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(244, 243, 238, 0.28);
+  background: rgba(14, 16, 20, 0.36);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #f4f3ee !important;
+  font-family: 'Inter', "PingFang SC", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none !important;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background: rgba(244, 243, 238, 0.92);
+    border-color: rgba(244, 243, 238, 0.92);
+    color: #141412 !important;
+  }
+}
+
+/* Single poetic line floating calmly in the upper twilight sky above the dune & walker */
+.cover-center {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto auto;
+  padding: clamp(78px, 16.5vh, 156px) 24px 0;
+}
+
+.cover-title {
+  margin: 0 !important;
+  font-family: 'Newsreader', 'Noto Serif SC', 'Songti SC', Georgia, serif;
+  font-size: clamp(2.05rem, 4.5vw, 3.45rem);
+  font-weight: 500;
+  line-height: 1.28;
+  letter-spacing: 0.1em;
+  color: #f9f8f4;
+  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.48), 0 0 24px rgba(176, 206, 255, 0.18);
+  transition: opacity 0.68s cubic-bezier(0.22, 1, 0.36, 1), letter-spacing 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cover-footer {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px 28px;
+  font-size: 0.82rem;
+  color: rgba(244, 243, 238, 0.78);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.cover-quicknav {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  a {
+    color: rgba(244, 243, 238, 0.86) !important;
+    text-decoration: none !important;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #ffffff !important;
+    }
+  }
+}
+
+.cover-sep {
+  opacity: 0.44;
+}
+
+.cover-credit {
+  font-family: 'JetBrains Mono', "PingFang SC", monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: rgba(244, 243, 238, 0.64);
+}
+
+@media (max-width: 780px) {
+  .cover-topbar {
+    padding: 18px 20px 0;
+  }
+
+  .cover-center {
+    padding: clamp(68px, 15vh, 120px) 20px 0;
+  }
+
+  .cover-footer {
+    padding: 0 20px 22px;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
+
+@media print {
+  .cover-stage {
+    display: none !important;
+  }
+}

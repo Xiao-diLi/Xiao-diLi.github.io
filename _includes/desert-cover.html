@@ -1,0 +1,58 @@
+{% include base_path %}
+{% if page.lang == "zh-CN" %}
+  {% assign is_zh = true %}
+  {% assign alt_url = page.alternate_url | default: "/" %}
+  {% assign alt_label = "EN" %}
+  {% assign alt_title = "Switch to English" %}
+  {% assign pubs_url = "/zh/publications/" %}
+  {% assign cv_url = "/zh/cv/" %}
+  {% assign blog_url = "/year-archive/" %}
+{% else %}
+  {% assign is_zh = false %}
+  {% assign alt_url = page.alternate_url | default: "/zh/" %}
+  {% assign alt_label = "中" %}
+  {% assign alt_title = "切换到中文" %}
+  {% assign pubs_url = "/publications/" %}
+  {% assign cv_url = "/cv/" %}
+  {% assign blog_url = "/year-archive/" %}
+{% endif %}
+<div class="cover-stage" id="desert-cover" role="dialog" aria-modal="true" aria-label="{% if is_zh %}沙漠封面，点击进入个人主页{% else %}Desert cover, click to enter homepage{% endif %}">
+  <div class="cover-backdrop" id="cover-backdrop" aria-hidden="true"></div>
+
+  <div class="cover-photo-frame" id="cover-photo-frame">
+    <img class="cover-bg-img" src="{{ base_path }}/images/hero-desert.jpg" alt="{% if is_zh %}李逍迪拍摄的沙漠剪影摄影作品{% else %}Desert dune silhouette photographed by Li Xiaodi{% endif %}" />
+    <canvas class="cover-canvas" id="cover-canvas" aria-hidden="true"></canvas>
+    <div class="cover-atmosphere" aria-hidden="true"></div>
+  </div>
+
+  <div class="cover-ui" id="cover-ui">
+    <header class="cover-topbar">
+      <span class="cover-topbar__spacer" aria-hidden="true"></span>
+      <div class="cover-topbar__right">
+        <a class="cover-pill-btn" href="{{ base_path }}{{ alt_url }}" title="{{ alt_title }}">{{ alt_label }}</a>
+        <button id="cover-tone-toggle" class="cover-pill-btn" type="button" title="{% if is_zh %}切换晨昏氛围{% else %}Toggle twilight tone{% endif %}" aria-label="{% if is_zh %}切换晨昏氛围{% else %}Toggle twilight tone{% endif %}">
+          {% if is_zh %}昼{% else %}Day{% endif %}
+        </button>
+      </div>
+    </header>
+
+    <div class="cover-center">
+      <p class="cover-title">
+        {% if is_zh %}一场穿越旷野的旅程{% else %}A Journey Across the Wilderness{% endif %}
+      </p>
+    </div>
+
+    <footer class="cover-footer">
+      <nav class="cover-quicknav" aria-label="{% if is_zh %}快速导航{% else %}Quick navigation{% endif %}">
+        <a href="#home" data-cover-enter="true">{% if is_zh %}个人主页{% else %}Home{% endif %}</a>
+        <span class="cover-sep" aria-hidden="true">·</span>
+        <a href="{{ base_path }}{{ pubs_url }}">{% if is_zh %}论文发表{% else %}Publications{% endif %}</a>
+        <span class="cover-sep" aria-hidden="true">·</span>
+        <a href="{{ base_path }}{{ cv_url }}">{% if is_zh %}个人简历{% else %}CV{% endif %}</a>
+        <span class="cover-sep" aria-hidden="true">·</span>
+        <a href="{{ base_path }}{{ blog_url }}">{% if is_zh %}博客随笔{% else %}Blog{% endif %}</a>
+      </nav>
+      <span class="cover-credit">{% if is_zh %}摄影 · 李逍迪{% else %}Photo · Li Xiaodi{% endif %}</span>
+    </footer>
+  </div>
+</div>
