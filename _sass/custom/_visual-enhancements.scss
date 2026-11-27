@@ -1,55 +1,51 @@
 /* ==========================================================================
    VISUAL ENHANCEMENTS & DESIGN SYSTEM
-   Quantum Sapphire & Optical Teal — Editorial Academic Theme
+   Archival Paper, Ink & Vermilion — Editorial Academic Theme
    ========================================================================== */
 
 /* ---------- Design Tokens (Light & Dark) ---------- */
 :root {
   /* Typography */
   --font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
-  --font-family-header: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-family-header: 'Newsreader', 'Noto Serif SC', 'Songti SC', Georgia, serif;
   --font-family-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  /* Quantum Sapphire & Optical Teal Palette (Light) */
-  --primary-color: #1d4ed8;
-  --primary-hover: #1e40af;
-  --primary-light: rgba(29, 78, 216, 0.08);
-  --primary-ring: rgba(29, 78, 216, 0.22);
+  /* Archival Paper, Ink & Vermilion Palette (Light) */
+  --primary-color: #a8452b;
+  --primary-hover: #89341e;
+  --primary-light: rgba(168, 69, 43, 0.08);
+  --primary-ring: rgba(168, 69, 43, 0.25);
 
-  --secondary-color: #0d9488;
-  --secondary-light: rgba(13, 148, 136, 0.10);
+  --secondary-color: #2e7d6f;
+  --secondary-light: rgba(46, 125, 111, 0.09);
 
-  --bg-color: #f7f9fc;
-  --bg-lattice-dot: rgba(30, 58, 138, 0.055);
-  --bg-glow-1: rgba(37, 99, 235, 0.075);
-  --bg-glow-2: rgba(13, 148, 136, 0.065);
+  --bg-color: #ffffff;
+  --card-bg: #fcfcfc;
+  --surface-subtle: #f5f5f2;
+  --card-border: #e5e5e0;
+  --card-border-strong: #d0d0ca;
+  --card-shadow: none;
+  --card-shadow-hover: none;
 
-  --card-bg: #ffffff;
-  --surface-subtle: #f1f5f9;
-  --card-border: #e2e8f0;
-  --card-border-strong: #cbd5e1;
-  --card-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.04);
-  --card-shadow-hover: 0 4px 10px rgba(15, 23, 42, 0.06), 0 14px 28px rgba(29, 78, 216, 0.08);
+  --masthead-bg: rgba(255, 255, 255, 0.96);
+  --masthead-shadow-scrolled: none;
 
-  --masthead-bg: rgba(247, 249, 252, 0.82);
-  --masthead-shadow-scrolled: 0 4px 20px rgba(15, 23, 42, 0.06);
+  --text-main: #161614;
+  --text-body: #343330;
+  --text-muted: #787771;
 
-  --text-main: #0f172a;
-  --text-body: #334155;
-  --text-muted: #64748b;
+  --badge-preprint-bg: rgba(168, 69, 43, 0.08);
+  --badge-preprint-text: #9c3b23;
+  --badge-preprint-border: rgba(168, 69, 43, 0.22);
 
-  --badge-preprint-bg: rgba(37, 99, 235, 0.09);
-  --badge-preprint-text: #1d4ed8;
-  --badge-preprint-border: rgba(37, 99, 235, 0.20);
+  --badge-journal-bg: rgba(46, 125, 111, 0.09);
+  --badge-journal-text: #25685c;
+  --badge-journal-border: rgba(46, 125, 111, 0.22);
 
-  --badge-journal-bg: rgba(13, 148, 136, 0.10);
-  --badge-journal-text: #0f766e;
-  --badge-journal-border: rgba(13, 148, 136, 0.22);
-
-  --selection-bg: rgba(29, 78, 216, 0.16);
+  --selection-bg: rgba(168, 69, 43, 0.16);
 
   /* Override AcademicPages Base Variables */
-  --global-base-color: #475569;
+  --global-base-color: #4c4b47;
   --global-bg-color: var(--bg-color);
   --global-footer-bg-color: transparent;
   --global-text-color: var(--text-body);
@@ -68,44 +64,40 @@
 }
 
 html[data-theme="dark"] {
-  --primary-color: #60a5fa;
-  --primary-hover: #93c5fd;
-  --primary-light: rgba(96, 165, 250, 0.13);
-  --primary-ring: rgba(96, 165, 250, 0.30);
+  --primary-color: #df6f51;
+  --primary-hover: #ee896d;
+  --primary-light: rgba(223, 111, 81, 0.14);
+  --primary-ring: rgba(223, 111, 81, 0.30);
 
-  --secondary-color: #2dd4bf;
-  --secondary-light: rgba(45, 212, 191, 0.12);
+  --secondary-color: #5ab09f;
+  --secondary-light: rgba(90, 176, 159, 0.14);
 
-  --bg-color: #0d1117;
-  --bg-lattice-dot: rgba(148, 163, 184, 0.075);
-  --bg-glow-1: rgba(59, 130, 246, 0.11);
-  --bg-glow-2: rgba(45, 212, 191, 0.07);
+  --bg-color: #121210;
+  --card-bg: #181815;
+  --surface-subtle: #20201c;
+  --card-border: #2b2b27;
+  --card-border-strong: #3d3d37;
+  --card-shadow: none;
+  --card-shadow-hover: none;
 
-  --card-bg: #151b23;
-  --surface-subtle: #1c2430;
-  --card-border: #26303d;
-  --card-border-strong: #39485b;
-  --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.28), 0 8px 24px rgba(0, 0, 0, 0.24);
-  --card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.42), 0 0 0 1px rgba(96, 165, 250, 0.20);
+  --masthead-bg: rgba(18, 18, 16, 0.96);
+  --masthead-shadow-scrolled: none;
 
-  --masthead-bg: rgba(13, 17, 23, 0.82);
-  --masthead-shadow-scrolled: 0 6px 24px rgba(0, 0, 0, 0.42);
+  --text-main: #ecebe6;
+  --text-body: #c9c8c0;
+  --text-muted: #8b8a82;
 
-  --text-main: #f1f5f9;
-  --text-body: #cbd5e1;
-  --text-muted: #94a3b8;
+  --badge-preprint-bg: rgba(223, 111, 81, 0.15);
+  --badge-preprint-text: #f0957c;
+  --badge-preprint-border: rgba(223, 111, 81, 0.28);
 
-  --badge-preprint-bg: rgba(96, 165, 250, 0.14);
-  --badge-preprint-text: #93c5fd;
-  --badge-preprint-border: rgba(96, 165, 250, 0.26);
+  --badge-journal-bg: rgba(90, 176, 159, 0.15);
+  --badge-journal-text: #7fd1c0;
+  --badge-journal-border: rgba(90, 176, 159, 0.28);
 
-  --badge-journal-bg: rgba(45, 212, 191, 0.13);
-  --badge-journal-text: #5eead4;
-  --badge-journal-border: rgba(45, 212, 191, 0.26);
+  --selection-bg: rgba(223, 111, 81, 0.26);
 
-  --selection-bg: rgba(96, 165, 250, 0.28);
-
-  --global-base-color: #94a3b8;
+  --global-base-color: #8b8a82;
   --global-bg-color: var(--bg-color);
   --global-footer-bg-color: transparent;
   --global-text-color: var(--text-body);
@@ -2028,279 +2020,143 @@ html[data-theme="dark"] .theme-svg--sun {
 }
 
 /* ==========================================================================
-   OPTIONAL ARCHIVAL PAPER THEME (html[data-style="archival"])
-   Inspired by timeline.laoqianriritan.com — Paper, Ink, Hairlines & Vermilion
+   ARCHIVAL PAPER & INK SURFACE REFINEMENTS
+   Paper, Ink, Crisp Hairlines & Vermilion Accents
    ========================================================================== */
 
-.masthead__style-btn {
-  gap: 5px;
-  border: 1px solid var(--card-border);
-  background: var(--surface-subtle);
-  color: var(--text-body) !important;
-
-  &::before {
-    content: "";
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #a8452b;
-    flex-shrink: 0;
-  }
-
-  .style-label-to-modern {
-    display: none;
-  }
+body {
+  background-image: none !important;
+  background-color: var(--bg-color);
 }
 
-html[data-style="archival"] {
-  --font-family-header: 'Newsreader', 'Noto Serif SC', 'Songti SC', Georgia, serif;
-  --font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+.masthead {
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid var(--card-border);
+  box-shadow: none !important;
+}
 
-  --primary-color: #a8452b;
-  --primary-hover: #89341e;
-  --primary-light: rgba(168, 69, 43, 0.08);
-  --primary-ring: rgba(168, 69, 43, 0.25);
+.site-brand {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
 
-  --secondary-color: #2e7d6f;
-  --secondary-light: rgba(46, 125, 111, 0.09);
+.masthead__menu-item a,
+.masthead__action-btn {
+  border-radius: 3px;
+}
 
-  --bg-color: #ffffff;
-  --card-bg: #fcfcfc;
-  --surface-subtle: #f5f5f2;
-  --card-border: #e5e5e0;
-  --card-border-strong: #d0d0ca;
-  --card-shadow: none;
-  --card-shadow-hover: none;
+.sidebar {
+  border-radius: 3px !important;
+  border-top: 2px solid var(--text-main) !important;
+  box-shadow: none !important;
+}
 
-  --masthead-bg: rgba(255, 255, 255, 0.96);
-  --masthead-shadow-scrolled: none;
+.author__avatar img {
+  border-radius: 3px !important;
+  box-shadow: none;
+}
 
-  --text-main: #161614;
-  --text-body: #343330;
-  --text-muted: #787771;
+.author__urls li a {
+  border-radius: 3px;
+}
 
-  --badge-preprint-bg: rgba(168, 69, 43, 0.08);
-  --badge-preprint-text: #9c3b23;
-  --badge-preprint-border: rgba(168, 69, 43, 0.22);
+.page__content h2,
+.cv-section__title {
+  font-weight: 600;
+  letter-spacing: 0.01em;
 
-  --badge-journal-bg: rgba(46, 125, 111, 0.09);
-  --badge-journal-text: #25685c;
-  --badge-journal-border: rgba(46, 125, 111, 0.22);
-
-  --selection-bg: rgba(168, 69, 43, 0.16);
-
-  --global-base-color: #4c4b47;
-  --global-bg-color: var(--bg-color);
-  --global-text-color: var(--text-body);
-  --global-text-color-light: var(--text-muted);
-  --global-link-color: var(--primary-color);
-  --global-link-color-hover: var(--primary-hover);
-  --global-link-color-visited: var(--primary-color);
-  --global-masthead-link-color: var(--text-main);
-  --global-masthead-link-color-hover: var(--primary-color);
-  --global-border-color: var(--card-border);
-  --global-dark-border-color: var(--card-border);
-  --global-divider-color: var(--card-border);
-  --global-code-background-color: var(--surface-subtle);
-  --global-code-text-color: var(--text-main);
-  --global-code-border-color: var(--card-border);
-
-  body {
-    background-image: none !important;
-    background-color: var(--bg-color);
-  }
-
-  .masthead {
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-bottom: 1px solid var(--card-border);
-    box-shadow: none !important;
-  }
-
-  .site-brand {
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-
-  .masthead__style-btn {
-    background: #161614;
-    border-color: #161614;
-    color: #ffffff !important;
-
-    &::before {
-      background: #e27d60;
-    }
-
-    &:hover {
-      background: #2b2b27;
-      border-color: #2b2b27;
-      color: #ffffff !important;
-    }
-
-    .style-label-to-archival {
-      display: none;
-    }
-
-    .style-label-to-modern {
-      display: inline;
-    }
-  }
-
-  .masthead__menu-item a,
-  .masthead__action-btn {
-    border-radius: 3px;
-  }
-
-  .sidebar {
-    border-radius: 3px !important;
-    border-top: 2px solid var(--text-main) !important;
-    box-shadow: none !important;
-  }
-
-  .author__avatar img {
-    border-radius: 3px !important;
-    box-shadow: none;
-  }
-
-  .author__urls li a {
-    border-radius: 3px;
-  }
-
-  .page__content h2,
-  .cv-section__title {
-    font-weight: 600;
-    letter-spacing: 0.01em;
-
-    &::after {
-      width: 28px;
-      height: 2px;
-      background: var(--primary-color);
-      border-radius: 0;
-    }
-  }
-
-  .home-hero {
-    border-radius: 3px;
-    border-color: var(--card-border-strong);
-  }
-
-  .home-hero__img {
-    filter: grayscale(16%) contrast(1.04);
-  }
-
-  .home-lead {
-    font-family: var(--font-family-header);
-    font-size: 1.18rem !important;
-    line-height: 1.8;
-  }
-
-  .research-card,
-  .home-pub-item,
-  .education-list,
-  .home-contact-card,
-  .list__item,
-  .cv-toolbar,
-  .cv-entries,
-  .cv-pub-list,
-  .pub-filter-bar {
-    border-radius: 3px;
-    box-shadow: none !important;
-  }
-
-  .research-card:hover,
-  .home-pub-item:hover,
-  .list__item:hover {
-    transform: none;
-    border-color: var(--text-main);
-    background: #ffffff;
-  }
-
-  .research-card__icon {
-    border-radius: 3px;
-    background: var(--surface-subtle);
-    color: var(--text-main);
-  }
-
-  .research-card:hover .research-card__icon {
+  &::after {
+    width: 28px;
+    height: 2px;
     background: var(--primary-color);
-    color: #ffffff;
-  }
-
-  .pub-filter-btn,
-  .pub-badge,
-  .pub-year-chip,
-  .home-contact-links a,
-  .cv-print-btn,
-  .btn,
-  .home-actions .btn--primary,
-  .home-text-link {
-    border-radius: 3px;
-  }
-
-  .home-actions .btn--primary {
-    background: var(--text-main);
-    box-shadow: none;
-
-    &:hover {
-      background: var(--primary-color);
-      filter: none;
-      transform: none;
-      box-shadow: none;
-    }
-  }
-
-  .pub-filter-btn.is-active {
-    background: var(--text-main);
-    color: #ffffff;
-    border-color: var(--text-main);
-    box-shadow: none;
-
-    .pub-filter-count {
-      background: rgba(255, 255, 255, 0.18);
-      color: #ffffff;
-    }
+    border-radius: 0;
   }
 }
 
-html[data-theme="dark"][data-style="archival"] {
-  --primary-color: #df6f51;
-  --primary-hover: #ee896d;
-  --primary-light: rgba(223, 111, 81, 0.14);
-  --primary-ring: rgba(223, 111, 81, 0.30);
+.home-hero {
+  border-radius: 3px;
+  border-color: var(--card-border-strong);
+}
 
-  --secondary-color: #5ab09f;
-  --secondary-light: rgba(90, 176, 159, 0.14);
+.home-hero__img {
+  filter: grayscale(16%) contrast(1.04);
+}
 
-  --bg-color: #121210;
-  --card-bg: #181815;
-  --surface-subtle: #20201c;
-  --card-border: #2b2b27;
-  --card-border-strong: #3d3d37;
-  --masthead-bg: rgba(18, 18, 16, 0.96);
+.home-lead {
+  font-family: var(--font-family-header);
+  font-size: 1.18rem !important;
+  line-height: 1.8;
+}
 
-  --text-main: #ecebe6;
-  --text-body: #c9c8c0;
-  --text-muted: #8b8a82;
+.research-card,
+.home-pub-item,
+.education-list,
+.home-contact-card,
+.list__item,
+.cv-toolbar,
+.cv-entries,
+.cv-pub-list,
+.pub-filter-bar {
+  border-radius: 3px;
+  box-shadow: none !important;
+}
 
-  --badge-preprint-bg: rgba(223, 111, 81, 0.15);
-  --badge-preprint-text: #f0957c;
-  --badge-preprint-border: rgba(223, 111, 81, 0.28);
+.research-card:hover,
+.home-pub-item:hover,
+.list__item:hover {
+  transform: none;
+  border-color: var(--text-main);
+  background: #ffffff;
+}
 
-  --badge-journal-bg: rgba(90, 176, 159, 0.15);
-  --badge-journal-text: #7fd1c0;
-  --badge-journal-border: rgba(90, 176, 159, 0.28);
+.research-card__icon {
+  border-radius: 3px;
+  background: var(--surface-subtle);
+  color: var(--text-main);
+}
 
-  .masthead__style-btn {
-    background: #ecebe6;
-    border-color: #ecebe6;
-    color: #121210 !important;
+.research-card:hover .research-card__icon {
+  background: var(--primary-color);
+  color: #ffffff;
+}
 
-    &:hover {
-      background: #ffffff;
-      color: #121210 !important;
-    }
+.pub-filter-btn,
+.pub-badge,
+.pub-year-chip,
+.home-contact-links a,
+.cv-print-btn,
+.btn,
+.home-actions .btn--primary,
+.home-text-link {
+  border-radius: 3px;
+}
+
+.home-actions .btn--primary {
+  background: var(--text-main);
+  box-shadow: none;
+
+  &:hover {
+    background: var(--primary-color);
+    filter: none;
+    transform: none;
+    box-shadow: none;
   }
+}
 
+.pub-filter-btn.is-active {
+  background: var(--text-main);
+  color: #ffffff;
+  border-color: var(--text-main);
+  box-shadow: none;
+
+  .pub-filter-count {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+  }
+}
+
+html[data-theme="dark"] {
   .research-card:hover,
   .home-pub-item:hover,
   .list__item:hover {

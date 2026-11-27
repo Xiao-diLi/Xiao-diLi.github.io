@@ -15,17 +15,12 @@
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
   (function() {
     var saved = null;
-    var savedStyle = null;
     try {
       saved = localStorage.getItem('theme');
-      savedStyle = localStorage.getItem('site-style');
     } catch (e) {}
     var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (saved === 'dark' || (!saved && prefersDark)) {
       document.documentElement.setAttribute('data-theme', 'dark');
-    }
-    if (savedStyle === 'archival') {
-      document.documentElement.setAttribute('data-style', 'archival');
     }
     if (window.location.hash === '#home') {
       document.documentElement.classList.add('cover-dismissed');

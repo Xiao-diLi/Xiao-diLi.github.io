@@ -10,9 +10,6 @@
   {% assign language_label = "EN" %}
   {% assign language_title = "Switch to English" %}
   {% assign theme_title = "切换明暗主题" %}
-  {% assign style_title = "切换纸墨风格 / 默认风格" %}
-  {% assign style_label_archival = "纸墨" %}
-  {% assign style_label_modern = "默认" %}
   {% assign nav_menu_aria = "打开导航菜单" %}
 {% else %}
   {% assign home_path = "/" %}
@@ -24,9 +21,6 @@
   {% assign language_label = "中文" %}
   {% assign language_title = "切换到中文" %}
   {% assign theme_title = "Toggle color theme" %}
-  {% assign style_title = "Switch between Default and Archival Paper theme" %}
-  {% assign style_label_archival = "Archival" %}
-  {% assign style_label_modern = "Modern" %}
   {% assign nav_menu_aria = "Open navigation menu" %}
 {% endif %}
 
@@ -58,10 +52,6 @@
 
     <div class="masthead__actions">
       <span class="masthead__divider" aria-hidden="true"></span>
-      <button id="style-toggle" class="masthead__action-btn masthead__style-btn" type="button" title="{{ style_title }}" aria-label="{{ style_title }}">
-        <span class="style-label-to-archival">{{ style_label_archival }}</span>
-        <span class="style-label-to-modern">{{ style_label_modern }}</span>
-      </button>
       <a id="lang-toggle" class="masthead__action-btn" href="{{ base_path }}{{ language_href }}" hreflang="{{ language_code }}" lang="{{ language_code }}" title="{{ language_title }}" aria-label="{{ language_title }}">{{ language_label }}</a>
       <button id="theme-toggle" class="masthead__action-btn masthead__action-btn--icon" type="button" title="{{ theme_title }}" aria-label="{{ theme_title }}">
         <svg class="theme-svg theme-svg--moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
